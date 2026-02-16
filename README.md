@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # BETIGA SARL - Site Web
 
 ## 📋 Description
@@ -47,3 +48,6 @@ netlify.toml          # Configuration Netlify
 ## 📧 Contact & Assistance
 
 Email: sbetiga@gmail.com
+=======
+# betiga
+>>>>>>> c86b9781d0d135011ff885b924e66dcef5e75e05
