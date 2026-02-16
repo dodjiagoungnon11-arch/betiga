@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BETIGA SARL - L'Innovation Géospatiale pour des Solutions Durables | Géomatique Bénin</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="BETIGA SARL - Bureau d'études techniques spécialisé en géomatique, topographie, SIG et télédétection à Porto-Novo, Bénin. 10 ans d'expertise au service de vos projets d'aménagement territorial.">
+    <meta name="keywords" content="géomatique Bénin, topographie Porto-Novo, SIG Bénin, télédétection, géomètre-expert, cartographie, aménagement territorial, BETIGA">
+    <meta name="author" content="BETIGA SARL">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BETIGA SARL - L'Innovation Géospatiale">
+    <meta property="og:description" content="Bureau d'études techniques spécialisé en géomatique à Porto-Novo, Bénin">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Leaflet pour la carte -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/page-styles.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <!-- Logo image - Décommentez et modifiez le chemin pour utiliser un logo -->
+                <img src="image\logo.jpeg" alt="Logo BETIGA SARL" class="logo-img">
+                
+                <!-- Fallback: Icône par défaut
+                <div class="logo-icon">B</div>
+                <div class="logo-text">
+                    <h1>BETIGA</h1>
+                    <p>SARL</p>
+                </div> -->
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#accueil" class="nav-link active">Accueil</a></li>
+                <li><a href="#apropos" class="nav-link">À propos</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#projets" class="nav-link">Projets</a></li>
+                <!--<li><a href="#blog" class="nav-link">Actualités</a></li>-->
+                 <!-- <li><a href="#equipe" class="nav-link">Équipe</a></li>-->
+                <li><a href="#contact" class="contact-btn">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section avec Slider 3D -->
+    <section class="hero" id="accueil">
+        <div class="hero-slider">
+            <!-- 
+            ═══════════════════════════════════════════════════════════
+            📸 SECTION IMAGES HERO - CHANGEZ VOS IMAGES ICI
+            ═══════════════════════════════════════════════════════════
+            Remplacez les URLs ci-dessous par vos propres images :
+            - Image 1 : Équipement topographique / GPS sur terrain
+            - Image 2 : Équipe BETIGA au travail
+            - Image 3 : Cartographie SIG / Ordinateur avec données
+            - Image 4 : Drone / Technologie de télédétection
+            
+            Format recommandé : JPG ou PNG, 1920x1080px minimum
+            ═══════════════════════════════════════════════════════════
+            -->
+            <div class="slide active">
+                <img src="image\GNSS.jpeg" alt="Équipement topographique professionnel BETIGA">
+            </div>
+            <div class="slide">
+                <img src="image/Equipe.jpeg" alt="Équipe de géomaticiens BETIGA sur le terrain">
+            </div>
+            <div class="slide">
+                <img src="image/Cartographie.jpg" alt="Système d'information géographique SIG">
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=1920&h=1080&fit=crop&q=85" alt="Technologie drone télédétection">
+            </div>
+        </div>
+        
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <h2>L'innovation <span class="highlight">géospatiale</span> pour des solutions durables</h2>
+                    <p class="tagline">Bureau d'Études Techniques d'Ingénieurs de Géomatique et d'Aménagement</p>
+                    <p>Excellence et précision au service de vos projets d'aménagement territorial. BETIGA SARL combine expertise technique avancée et technologies de pointe pour transformer vos ambitions en réussites concrètes et durables.</p>
+                    <div class="hero-buttons">
+                        <a href="#services" class="btn btn-primary">
+                            <i class="fas fa-compass"></i>
+                            Découvrir nos services
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i>
+                            Demander un devis
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="stats-grid">
+                        <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="stat-icon"><i class="fas fa-calendar-check"></i></div>
+                            <div class="stat-number">
+                                <span class="counter" data-target="10">10</span>
+                            </div>
+                            <div class="stat-label">Années d'expérience</div>
+                        </div>
+                        <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
+                            <div class="stat-number">
+                                <span class="counter" data-target="350">10</span>+
+                            </div>
+                            <div class="stat-label">Projets réalisés</div>
+                        </div>
+                        <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                            <div class="stat-icon"><i class="fas fa-smile"></i></div>
+                            <div class="stat-number">
+                                <span class="counter" data-target="100">100</span>%
+                            </div>
+                            <div class="stat-label">Satisfaction client</div>
+                        </div>
+                        <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
+                            <div class="stat-icon"><i class="fas fa-users"></i></div>
+                            <div class="stat-number">
+                                <span class="counter" data-target="12">12</span>+
+                            </div>
+                            <div class="stat-label">Techniciens qualifiés</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carte centrée sur le Bénin (affichée au chargement) 
+    <section id="map-hero" style="padding:0;">
+        <div id="beninMap" style="width:100%; height:360px;"></div>
+    </section> -->
+
+    <!-- About Section (Juste après l'accueil) -->
+    <section class="about" id="apropos">
+        <div class="about-container">
+            <div class="about-grid">
+                <div class="about-image-wrapper" data-aos="fade-right">
+                    <div class="about-image">
+                        <!-- 
+                        ═══════════════════════════════════════════════════════════
+                        📸 IMAGE À PROPOS - CHANGEZ VOTRE IMAGE ICI
+                        ═══════════════════════════════════════════════════════════
+                        Remplacez l'URL ci-dessous par :
+                        - Photo de l'équipe BETIGA au complet
+                        - Photo du bureau / locaux
+                        - Photo d'un projet majeur emblématique
+                        
+                        Format recommandé : JPG, 800x650px minimum
+                        ═══════════════════════════════════════════════════════════
+                        -->
+                        <img src="image/Equipe.jpeg" alt="Équipe BETIGA SARL au travail">
+                    </div>
+                    <div class="about-badge">
+                        <span class="number">10</span>
+                        <span class="text">Ans d'expertise</span>
+                    </div>
+                </div>
+                <div class="about-content" data-aos="fade-left">
+                    <div class="section-header">
+                        <div class="section-subtitle">
+                            À propos de BETIGA
+                        </div>
+                        <h2 class="section-title">Votre partenaire de confiance en géomatique</h2>
+                        <p class="section-description">
+                            Le Bureau d'Etudes Techniques d'Ingénieurs de Géomatique et d'Aménagement (BETIGA SARL) est un bureau d'études de droit béninois intervenant dans tous les domaines appelant la compétence de l'ingénieur.
+                        </p>
+                    </div>
+                    
+                    <div class="about-text">
+                        <p>
+                          Inscrit au Tableau de l'Ordre des Géomètres-Experts du Bénin sous le n° 84 en date de 06/11/2014 et suivant l'Arrêté Ministériel n° 046/MUHA/DC/SGM/DPM/SPQP/SA du 16/07/2015, le bureau d'études a été créé en 2016.  .
+                        </p>
+                        <p>
+                            Sous la direction de <strong>M. Y. Marius Risley GNASSOUNOU</strong>, Géomètre-Expert agréé et Spécialiste en SIG et Télédétection, notre équipe pluridisciplinaire conjugue compétences techniques avancées, maîtrise des outils de pointe et connaissance approfondie du terrain. Nous offrons des solutions géospatiales innovantes, précises et parfaitement adaptées aux défis contemporains d'aménagement territorial et de développement durable.
+                        </p>
+                        <p>
+                          Depuis sa création en 2016, le bureau d'études travaille avec plusieurs partenaires tant dans le secteur public que dans le privé grâce à son sérieux et à son savoir-faire professionnel et occupe aujourd'hui une place de choix dans les travaux d'aménagement et de topographie en République du Bénin. S'appuyant sur une équipe d'ingénieurs, de techniciens et d'ouvriers qualifiés, il dispose du matériel moderne adapté. Professionnalisme, rigueur et sérieux dans le travail mais aussi et surtout le respect des engagements contractuels (qualité, coûts et délais), constituent son crédo.
+                        </p>
+                    </div>
+
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Expertise certifiée</h4>
+                                <p>Géomètre-Expert agréé officiellement</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Technologies avancées</h4>
+                                <p>Équipements dernière génération</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-users-cog"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Équipe qualifiée</h4>
+                                <p>Professionnels expérimentés et formés</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Solutions sur mesure</h4>
+                                <p>Adaptées à vos besoins spécifiques</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mission, Vision, Valeurs -->
+            <div class="mvv-grid">
+                <div class="mvv-card" data-aos="fade-up">
+                    <div class="mvv-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Notre Mission</h3>
+                    <p>
+                        Fournir des solutions géospatiales innovantes et précises qui facilitent la prise de décision éclairée en matière d'aménagement territorial, de gestion foncière et de développement durable. Nous nous engageons à être le partenaire privilégié de nos clients dans la réussite de leurs projets.
+                    </p>
+                </div>
+                <div class="mvv-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="mvv-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Notre Vision</h3>
+                    <p>
+                        Devenir le leader régional en géomatique d'ici 2030, reconnu pour l'excellence de nos prestations, notre capacité d'innovation et notre contribution significative au développement territorial durable en Afrique de l'Ouest et au-delà.
+                    </p>
+                </div>
+                <div class="mvv-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="mvv-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Nos Valeurs</h3>
+                    <p>
+                        Excellence professionnelle, intégrité absolue, innovation constante, engagement client total et responsabilité environnementale guident chacune de nos actions et décisions. Ces valeurs sont le socle de notre réputation et de notre succès.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="services-container">
+            <div class="section-header text-center" style="text-align: center;">
+                <div class="section-subtitle" style="justify-content: center;">
+                    Nos Domaines d'Expertise
+                </div>
+                <h2 class="section-title">Solutions Géospatiales Complètes</h2>
+                <p class="section-description" style="max-width: 800px; margin: 0 auto;">
+                    Des services professionnels de haute précision, adaptés aux exigences les plus pointues de vos projets d'aménagement et de développement territorial.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up">
+                    <div class="service-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>Études et Contrôles</h3>
+                    <p>
+                    
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <h3>Routes et Assainissement</h3>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                    <h3>Topographie</h3>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Expertise Foncière et Immobilière</h3>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <h3>Cartographie</h3>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <i class="fas fa-satellite"></i>
+                    </div>
+                    <h3>Télédétection</h3>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Systèmes d'Information Géographique</h3>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="700">
+                    <div class="service-icon">
+                        <i class="fas fa-chalkboard-user"></i>
+                    </div>
+                    <h3>Formation</h3>
+                    <p>
+                      
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projets">
+        <div class="projects-container">
+            <div class="section-header text-center" style="text-align: center;">
+                <div class="section-subtitle" style="justify-content: center;">
+                    Nos Réalisations
+                </div>
+                <h2 class="section-title">Projets Récents</h2>
+                <p class="section-description" style="max-width: 800px; margin: 0 auto;">
+                    Découvrez une sélection de nos projets emblématiques qui témoignent de notre expertise technique, de notre engagement qualité et de notre capacité à relever les défis les plus complexes.
+                </p>
+            </div>
+
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">Tous les projets</button>
+                <button class="filter-btn" data-filter="topographie">Topographie</button>
+                <button class="filter-btn" data-filter="sig">SIG</button>
+                <button class="filter-btn" data-filter="teledetection">Télédétection</button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- 
+                ═══════════════════════════════════════════════════════════
+                📸 SECTION IMAGES PROJETS - CHANGEZ VOS IMAGES ICI
+                ═══════════════════════════════════════════════════════════
+                Pour chaque projet, remplacez l'URL de l'image par vos photos
+                Format recommandé : JPG, 600x400px minimum
+                ═══════════════════════════════════════════════════════════
+                -->
+                
+                <!-- Projet 1 -->
+                <div class="project-card" data-category="topographie" data-aos="fade-up">
+                    <div class="project-image">
+                        <img src="image\aménagement__banikoara2.jpg" alt="Aménagement foncier - Banikoara">
+                        <div class="project-overlay">
+                            <span class="project-category">Topographie</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Aménagement foncier - Banikoara</h3>
+                        <p>Levé topographique complet pour l'aménagement d'une zone résidentielle de 50 hectares incluant voiries, réseaux divers et espaces verts.</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Banikoara</span>
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 2 -->
+                <div class="project-card" data-category="sig" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="image\Projet_bloc2_banikoara.jpg" alt="Topographie - Bloc administratif à Malanville">
+                        <div class="project-overlay">
+                            <span class="project-category">Topographie</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Topographie - Bloc administratif à Malanville</h3>
+                        <p>Aménagement topographique et cartographie pour l'aide à la décision d'une commune.</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Malanville</span>
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 3 -->
+                <div class="project-card" data-category="teledetection" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="image\Cartographie.jpg" alt="Cartographie occupation sol">
+                        <div class="project-overlay">
+                            <span class="project-category">Télédétection</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Collecte/actualisation des données Cadastrales dans les arrondissements 1 A 8 de Cotonou </h3>
+                        <p>Les missions du projet consisteront à la réalisation de la collecte / actualisation de données  foncières en vue de leur intégration au cadastre national ; la collecte de nouvelles données sera faite dans les zones ne disposant pas de données existantes. Par contre, l'actualisation
+concerne les zones disposant déjà de données telles que les états des lieux, les
+lotissements/remembrements, PFR, etc. .</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Cotonou</span>
+                            <span><i class="fas fa-calendar"></i>2023-2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 4 -->
+                <div class="project-card" data-category="topographie" data-aos="fade-up">
+                    <div class="project-image">
+                        <img src="image\station_ponpage_banikoara2.jpg" alt="Infrastructure routière">
+                        <div class="project-overlay">
+                            <span class="project-category">Topographie</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Collecte/actualisation des données foncières dans six communes : Djougou, Parakou, Aplahoué, Grand-Popo, Sakété et Pobé,
+(Lot 5) </h3>
+                        <p>Descriptif du Projet :
+Les missions du projet consisteront à la réalisation de la collecte / actualisation de données 
+foncières en vue de leur intégration au cadastre national ; la collecte de nouvelles données sera
+faite dans les zones ne disposant pas de données existantes. Par contre, l'actualisation
+concerne les zones disposant déjà de données telles que les états des lieux, les
+lotissements/remembrements, PFR, etc. .</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Djougou, Parakou,
+Aplahoué, Grand-Popo, Sakété et Pobé</span>
+                            <span><i class="fas fa-calendar"></i> 2023</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 5 -->
+                <div class="project-card" data-category="sig" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="image\station_ponpage_banikoara2.jpg" alt="Gestion ressources eau">
+                        <div class="project-overlay">
+                            <span class="project-category">SIG</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Travaux de délimitation et de matérialisationdes limites du périmètre du projet depromotion de l'aquaculture durable et decompétitivité des chaines de valeurs de lapêche ( PROMAC) dans la Commune de ToriBossito : superficie d'environ 50 hectares
+</h3>
+                        <p>Le projet dénommé "PROMAC" vise à renforcer les futures ouvrages qui doivent résister aux intempéries et être facilement repérables sur le terrain.</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Cotonou</span>
+                            <span><i class="fas fa-calendar"></i> 2022-2023</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 6 -->
+                <div class="project-card" data-category="teledetection" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="image\aménagement__banikoara1.jpg" alt="Mission d'audit des travaux de lotissement et de remembrement dans la Commune de Ouidah </h3>">
+                        <div class="project-overlay">
+                            <span class="project-category">Ouidah</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Mission d'audit des travaux de lotissement et de remembrement dans la Commune de Ouidah </h3>
+                        <p>Monitoring satellite de l'évolution du couvert forestier et détection précoce des zones de déforestation critique pour intervention rapide.</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Ouidah</span>
+                            <span><i class="fas fa-calendar"></i> 2020</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog / Actualités Section 
+    <section class="blog" id="blog">
+        <div class="blog-container">
+            <div class="section-header text-center" style="text-align: center;">
+                <div class="section-subtitle" style="justify-content: center;">
+                    Actualités & Insights
+                </div>
+                <h2 class="section-title">Dernières Publications</h2>
+                <p class="section-description" style="max-width: 800px; margin: 0 auto;">
+                    Restez informés des dernières avancées technologiques, des tendances du secteur et des actualités de BETIGA. Notre expertise partagée pour votre réussite.
+                </p>
+            </div>
+
+            <div class="blog-grid">
+                --><!-- 
+                ═══════════════════════════════════════════════════════════
+                📸 SECTION IMAGES BLOG - CHANGEZ VOS IMAGES ICI
+                ═══════════════════════════════════════════════════════════
+                Pour chaque article, remplacez l'URL de l'image
+                Format recommandé : JPG, 600x400px
+                ═══════════════════════════════════════════════════════════
+                -->
+                
+                <!-- Article 1 
+                <div class="blog-card" data-aos="fade-up">
+                    <div class="blog-image">
+                        <img src="image/GNSS.jpeg" alt="Technologies GNSS">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 20 Janvier 2026</span>
+                            <span><i class="fas fa-folder"></i> Technologie</span>
+                        </div>
+                        <h3>Les Nouvelles Technologies GNSS au Service de la Précision</h3>
+                        <p>
+                            Découvrez comment les systèmes GNSS de nouvelle génération révolutionnent la précision des levés topographiques et ouvrent de nouvelles perspectives pour le secteur...
+                        </p>
+                        <a href="#blog" class="read-more">
+                            Lire la suite <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>-->
+
+                <!-- Article 2 
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=700&h=500&fit=crop&q=85" alt="Intelligence artificielle SIG">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 12 Janvier 2026</span>
+                            <span><i class="fas fa-folder"></i> Innovation</span>
+                        </div>
+                        <h3>L'Intelligence Artificielle dans les SIG : Opportunités et Défis</h3>
+                        <p>
+                            L'IA transforme radicalement la manière dont nous analysons et exploitons les données géospatiales. Explorons ensemble les possibilités infinies qui s'offrent à nous...
+                        </p>
+                        <a href="#blog" class="read-more">
+                            Lire la suite <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>-->
+
+                <!-- Article 3 
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=700&h=500&fit=crop&q=85" alt="Drones en géomatique">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 5 Janvier 2026</span>
+                            <span><i class="fas fa-folder"></i> Télédétection</span>
+                        </div>
+                        <h3>Les Drones Révolutionnent la Télédétection</h3>
+                        <p>
+                            Comment la photogrammétrie par drone change la donne en matière de cartographie rapide et précise. Une technologie accessible qui démocratise l'accès aux données...
+                        </p>
+                        <a href="#blog" class="read-more">
+                            Lire la suite <i class="fas fa-arrow-right"></i>
+                        </a> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+    <!-- Team Section - COMMENTÉE
+    <section class="team" id="equipe">
+        <div class="team-container">
+            <div class="section-header text-center" style="text-align: center;">
+                <div class="section-subtitle" style="justify-content: center;">
+                    Notre Force
+                </div>
+                <h2 class="section-title">Une Équipe d'Experts Passionnés</h2>
+                <p class="section-description" style="max-width: 800px; margin: 0 auto;">
+                    Des professionnels qualifiés et expérimentés, unis par la passion de l'excellence, l'innovation et le service au service de vos ambitions.
+                </p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-member" data-aos="fade-up">
+                    <div class="team-image">
+                        <img src="chemin/vers/photo-marius.jpg" alt="Y. Marius Risley GNASSOUNOU">
+                        YMR
+                    </div>
+                    <div class="team-info">
+                        <h3>Y. Marius Risley GNASSOUNOU</h3>
+                        <p>Directeur Général<br>Géomètre-Expert Agréé<br>Spécialiste SIG et Télédétection</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+
+    <!-- Contact Section avec Google Maps -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="section-header text-center" style="text-align: center; margin-bottom: 35px;">
+                <div class="section-subtitle" style="justify-content: center;">
+                    Parlons de Votre Projet
+                </div>
+                <h2 class="section-title">Contactez-Nous</h2>
+                <p class="section-description" style="max-width: 800px; margin: 0 auto;">
+                    Notre équipe est à votre écoute pour répondre à vos besoins, vous conseiller et vous accompagner dans la réussite de tous vos projets géomatiques.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <div>
+                    <div class="contact-info-cards">
+                        <div class="contact-card" data-aos="fade-right">
+                            <div class="contact-card-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-card-content">
+                                <h4>Téléphone</h4>
+                                <p><a href="tel:+22901694930333">01 69 49 30 33</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-card" data-aos="fade-right" data-aos-delay="100">
+                            <div class="contact-card-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-card-content">
+                                <h4>Email</h4>
+                                <p><a href="mailto:sbetiga@gmail.com">sbetiga@gmail.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-card" data-aos="fade-right" data-aos-delay="200">
+                            <div class="contact-card-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-card-content">
+                                <h4>Adresse</h4>
+                                <p>01 BP: 3112<br>Porto-Novo, Bénin</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-card" data-aos="fade-right" data-aos-delay="300">
+                            <div class="contact-card-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-card-content">
+                                <h4>Horaires d'ouverture</h4>
+                                <p>Lundi - Vendredi<br>8h00 - 18h30</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Google Maps Integration -->
+                    <div class="map-container" data-aos="fade-right" data-aos-delay="400">
+                        <!-- 
+                        ═══════════════════════════════════════════════════════════
+                        🗺️ GOOGLE MAPS - PERSONNALISEZ VOTRE LOCALISATION
+                        ═══════════════════════════════════════════════════════════
+                        Pour personnaliser la carte avec votre emplacement exact :
+                        
+                        1. Allez sur https://www.google.com/maps
+                        2. Cherchez votre adresse exacte
+                        3. Cliquez sur "Partager"
+                        4. Choisissez "Intégrer une carte"
+                        5. Copiez le code iframe
+                        6. Remplacez l'iframe ci-dessous
+                        
+                        Coordonnées actuelles : Porto-Novo (exemple générique)
+                        ═══════════════════════════════════════════════════════════
+                        -->
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.3462456480524!2d2.420184!3d6.3715818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x102355e5739b791d%3A0xb100c5eeda154251!2sBETIGA%20Sarl!5e0!3m2!1sfr!2sfr!4v1234567890"
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Localisation BETIGA SARL">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Contact Form Fonctionnel -->
+                <div class="contact-form" data-aos="fade-left">
+                    <div class="form-message" id="formMessage"></div>
+                    
+                    <!-- 
+                    ═══════════════════════════════════════════════════════════
+                    📧 FORMULAIRE DE CONTACT - CONFIGURATION
+                    ═══════════════════════════════════════════════════════════
+                    
+                    OPTION 1 - FormSubmit (GRATUIT ET FACILE) :
+                    Changez l'action du form ci-dessous :
+                    <form action="https://formsubmit.co/sbetiga@gmail.com" method="POST">
+                    
+                    OPTION 2 - EmailJS (GRATUIT) :
+                    Configurez EmailJS et utilisez le JavaScript en bas
+                    
+                    OPTION 3 - Backend personnalisé :
+                    Connectez à votre serveur backend
+                    ═══════════════════════════════════════════════════════════
+                    -->
+                    <form id="contactForm" action="https://formsubmit.co/sbetiga@gmail.com" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Nom complet *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Téléphone</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Sujet *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Sélectionnez un sujet</option>
+                                    <option value="Demande de devis">Demande de devis</option>
+                                    <option value="Information sur services">Information sur services</option>
+                                    <option value="Partenariat">Partenariat</option>
+                                    <option value="Recrutement">Recrutement</option>
+                                    <option value="Recrutement">Formation</option>
+                                    <option value="Autre">Autre</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="attachment">Joindre un fichier (PDF)</label>
+                                <input type="file" id="attachment" name="attachment" accept=".dxf,.sgp,.pdf,application/pdf">
+                            </div>
+
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i> Envoyer le message
+                            </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>BETIGA SARL</h3>
+                    <p>
+                        Bureau d'Études Techniques d'Ingénieurs de Géomatique et d'Aménagement. 
+                        L'innovation géospatiale pour des solutions durables au service du développement territorial du Bénin et de l'Afrique.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services"><i class="fas fa-angle-right"></i> Topographie</a></li>
+                        <li><a href="#services"><i class="fas fa-angle-right"></i> SIG</a></li>
+                        <li><a href="#services"><i class="fas fa-angle-right"></i> Télédétection</a></li>
+                        <li><a href="#services"><i class="fas fa-angle-right"></i> Cartographie</a></li>
+                        <li><a href="#services"><i class="fas fa-angle-right"></i> Formation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Liens Rapides</h4>
+                    <ul class="footer-links">
+                        <li><a href="#accueil"><i class="fas fa-angle-right"></i> Accueil</a></li>
+                        <li><a href="#apropos"><i class="fas fa-angle-right"></i> À propos</a></li>
+                        <li><a href="#projets"><i class="fas fa-angle-right"></i> Projets</a></li>
+                        <!--<li><a href="#blog"><i class="fas fa-angle-right"></i> Actualités</a></li>-->
+                      
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Coordonnées</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 01 BP: 3112, Porto-Novo, Bénin</li>
+                        <li><i class="fas fa-phone"></i> 01 69 49 30 33</li>
+                        <li><a href="mailto:contact@betiga.bj"><i class="fas fa-envelope"></i> sbetiga@gmail.</a></li>
+                        <li><i class="fas fa-clock"></i> Lun - Ven: 8h - 19h</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 BETIGA SARL. Tous droits réservés. | Conçu avec expertise et passion pour l'excellence géospatiale.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Leaflet pour Google Maps -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- JavaScript Principal -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+[build]
+  command = "echo 'Site prêt pour Netlify'"
+  publish = "."
+
+[[redirects]]
+  from = "/send.php"
+  to = "/"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"

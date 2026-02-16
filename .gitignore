@@ -1,0 +1,24 @@
+# Système
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Dépendances
+node_modules/
+npm-debug.log
+
+# Environnement
+.env
+.env.local
+
+# Uploads (PHP local)
+uploads/
+
+# Fichiers temporaires
+*.tmp
+*.log
