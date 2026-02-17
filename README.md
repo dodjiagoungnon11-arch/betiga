@@ -31,19 +31,38 @@ Site web professionnel de BETIGA SARL - Bureau d'Études Techniques spécialisé
 ## 📁 Structure du projet
 
 ```
-betiga-website.html    # Page principale
+index.html             # Page principale
 send.php               # Non utilisé sur Netlify
 css/                   # Feuilles de style
 js/                    # JavaScript
 image/                 # Images et photos
-netlify.toml          # Configuration Netlify
+netlify.toml           # Configuration Netlify
 ```
 
 ## 🔧 Développement local
 
-- Ouvrez `betiga-website.html` dans votre navigateur
+- Ouvrez `index.html` dans votre navigateur
 - Les modifications sont instantanées (F5 pour rafraîchir)
 - Testez le formulaire (FormSubmit enverra un vrai email)
+
+## 🖼️ Optimiser les images (réduire la taille pour un chargement rapide)
+
+Un script Node.js est fourni pour sauvegarder les originaux et compresser les images.
+
+1. Installez Node.js (si nécessaire) : https://nodejs.org/
+2. Dans le dossier du projet, installez les dépendances :
+
+```bash
+npm install
+```
+
+3. Lancez l'optimisation :
+
+```bash
+npm run optimize-images
+```
+
+Le script sauvegarde d'abord les images originales dans `image/originals_backup/` puis compresse et remplace les fichiers originaux par des versions optimisées. Vérifiez les images et committez les changements si tout est OK.
 
 ## 📧 Contact & Assistance
 

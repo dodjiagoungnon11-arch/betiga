@@ -1,0 +1,13 @@
+{
+  "name": "betiga-image-optimizer",
+  "version": "1.0.0",
+  "description": "Scripts pour optimiser les images du site BETIGA",
+  "main": "scripts/optimize-images.js",
+  "scripts": {
+    "optimize-images": "node scripts/optimize-images.js"
+  },
+  "dependencies": {
+    "fast-glob": "^3.2.12",
+    "sharp": "^0.32.4"
+  }
+}

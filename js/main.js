@@ -1,15 +1,14 @@
-<<<<<<< HEAD
 // Editable content: change images and projects here
 const DEFAULT_CAROUSEL = [
-    'images/slide1.jpg',
-    'images/slide2.jpg',
-    'images/slide3.jpg'
+    'image/GNSS.jpeg',
+    'image/Equipe.jpeg',
+    'image/Cartographie.jpg'
 ];
 
 const DEFAULT_PROJECTS = [
-    { title: 'Projet Exemple A', desc: 'Étude topographique et SIG pour aménagement local.', img: 'images/proj1.jpg' },
-    { title: 'Projet Exemple B', desc: 'Cartographie et télédétection pour suivi environnemental.', img: 'images/proj2.jpg' },
-    { title: 'Projet Exemple C', desc: 'Relevés topographiques pour projet d’infrastructure.', img: 'images/proj3.jpg' }
+    { title: 'Projet Exemple A', desc: 'Étude topographique et SIG pour aménagement local.', img: 'image/Projet_bloc1_banikoara.jpg' },
+    { title: 'Projet Exemple B', desc: 'Cartographie et télédétection pour suivi environnemental.', img: 'image/Projet_bloc2_banikoara.jpg' },
+    { title: 'Projet Exemple C', desc: 'Relevés topographiques pour projet d’infrastructure.', img: 'image/topographie.jpg' }
 ];
 
 const LS_KEY_IMAGES = 'betiga_carousel_images';
@@ -408,94 +407,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initProjectFilter();
     initBackToTop();
 });
-=======
-// Editable content: change images and projects here
-const DEFAULT_CAROUSEL = [
-    'images/slide1.jpg',
-    'images/slide2.jpg',
-    'images/slide3.jpg'
-];
-
-const DEFAULT_PROJECTS = [
-    { title: 'Projet Exemple A', desc: 'Étude topographique et SIG pour aménagement local.', img: 'images/proj1.jpg' },
-    { title: 'Projet Exemple B', desc: 'Cartographie et télédétection pour suivi environnemental.', img: 'images/proj2.jpg' },
-    { title: 'Projet Exemple C', desc: 'Relevés topographiques pour projet d’infrastructure.', img: 'images/proj3.jpg' }
-];
-
-const LS_KEY_IMAGES = 'betiga_carousel_images';
-const LS_KEY_PROJECTS = 'betiga_projects';
-
-let carouselImages = JSON.parse(localStorage.getItem(LS_KEY_IMAGES) || 'null') || DEFAULT_CAROUSEL.slice();
-let projects = JSON.parse(localStorage.getItem(LS_KEY_PROJECTS) || 'null') || DEFAULT_PROJECTS.slice();
-
-/* -------------------- Carousel 3D -------------------- */
-function buildCarousel() {
-    const container = document.getElementById('carousel');
-    if (!container) return;
-    // clear previous
-    container.innerHTML = '';
-    const n = Math.max(1, carouselImages.length);
-    const scene = document.createElement('div');
-    scene.className = 'carousel-scene';
-    container.appendChild(scene);
-
-    const slides = [];
-    carouselImages.forEach((src) => {
-        const slide = document.createElement('div');
-        slide.className = 'carousel-slide';
-        slide.style.backgroundImage = `url('${src}')`;
-        scene.appendChild(slide);
-        slides.push(slide);
-    });
-
-    const angle = 360 / n;
-    let slideWidth = Math.min(560, container.offsetWidth * 0.9);
-    let radius = Math.round((slideWidth / 2) / Math.tan(Math.PI / n));
-
-    function positionSlides() {
-        slideWidth = Math.min(560, container.offsetWidth * 0.9);
-        radius = Math.round((slideWidth / 2) / Math.tan(Math.PI / n));
-        slides.forEach((s, i) => {
-            const rot = i * angle;
-            s.style.width = slideWidth + 'px';
-            s.style.transform = `rotateY(${rot}deg) translateZ(${radius}px) translateX(-50%)`;
-        });
-    }
-    positionSlides();
-
-    let current = 0;
-    function rotateTo(i) {
-        scene.style.transform = `translateZ(-100px) rotateY(${-i * angle}deg)`;
-    }
-
-    // Controls
-    const controls = document.createElement('div');
-    controls.className = 'carousel-controls';
-    const prev = document.createElement('button');
-    prev.className = 'carousel-btn';
-    prev.innerText = '‹';
-    prev.addEventListener('click', () => { current = (current - 1 + n) % n; rotateTo(current); });
-
-    const next = document.createElement('button');
-    next.className = 'carousel-btn';
-    next.innerText = '›';
-    next.addEventListener('click', () => { current = (current + 1) % n; rotateTo(current); });
-
-    controls.appendChild(prev);
-    controls.appendChild(next);
-    container.appendChild(controls);
-
-    // autoplay
-    let interval = setInterval(() => { current = (current + 1) % n; rotateTo(current); }, 4200);
-    container.addEventListener('mouseenter', () => clearInterval(interval));
-    container.addEventListener('mouseleave', () => { interval = setInterval(() => { current = (current + 1) % n; rotateTo(current); }, 4200); });
-
-    // responsive
-    window.addEventListener('resize', () => { positionSlides(); rotateTo(current); });
-
-    // initial
-    rotateTo(0);
-}
 
 /* -------------------- Counters -------------------- */
 function animateCounters() {
@@ -818,4 +729,3 @@ document.addEventListener('DOMContentLoaded', () => {
     initProjectFilter();
     initBackToTop();
 });
->>>>>>> c86b9781d0d135011ff885b924e66dcef5e75e05
