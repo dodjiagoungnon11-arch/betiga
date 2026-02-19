@@ -111,10 +111,16 @@ a {
 
 /* Logo image - si vous avez un fichier logo */
 .logo-img {
-    max-height: 60px;
+    max-height: 84px;
     width: auto;
     object-fit: contain;
+    transition: transform .18s ease;
 }
+
+/* Hero slider controls */
+.hero-controls { position: absolute; right: 24px; bottom: 24px; display:flex; gap:8px; z-index:10; }
+.hero-controls button { background: rgba(255,255,255,0.9); border: none; padding: 10px 12px; border-radius:10px; cursor:pointer; box-shadow: var(--shadow-sm); font-size:18px; }
+.hero-controls button:hover{ transform: translateY(-3px); }
 
 .logo-icon {
     width: 55px;
@@ -701,19 +707,34 @@ IMAGE À PROPOS - CHANGEZ VOTRE IMAGE ICI
 
 .service-card {
     background: white;
-    padding: 48px 38px;
     border-radius: 18px;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
     position: relative;
     overflow: hidden;
     border: 2px solid transparent;
-
-    /* Make all service cards the same visual size (match 'Cartographie') */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    min-height: 280px;
+    min-height: 380px;
+}
+
+.service-image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.service-card:hover .service-image img {
+    transform: scale(1.08);
 }
 
 .service-card::before {
@@ -746,10 +767,12 @@ IMAGE À PROPOS - CHANGEZ VOTRE IMAGE ICI
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 28px;
+    margin: 28px 0 0 0;
+    margin-left: 28px;
     font-size: 38px;
     color: white;
     transition: var(--transition);
+    flex-shrink: 0;
 }
 
 .service-card:hover .service-icon {
@@ -757,15 +780,16 @@ IMAGE À PROPOS - CHANGEZ VOTRE IMAGE ICI
 }
 
 .service-card h3 {
-    font-size: 23px;
+    font-size: 21px;
     color: var(--dark);
-    margin-bottom: 16px;
+    margin: 16px 28px 0 28px;
+    padding-bottom: 28px;
 }
 
 .service-card p {
     color: var(--gray);
     line-height: 1.85;
-    margin-bottom: 28px;
+    margin: 0 28px 28px 28px;
 }
 
 .service-features {
@@ -1296,6 +1320,64 @@ Voir les instructions dans le HTML pour personnaliser
     display: block;
 }
 
+/* Modal confirmation */
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.45);
+    z-index: 9999;
+    padding: 20px;
+}
+.modal.open { display: flex; }
+.modal-content {
+    background: #fff;
+    border-radius: 10px;
+    padding: 22px;
+    max-width: 520px;
+    width: 100%;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    position: relative;
+}
+.modal-content h3 { margin-top: 0; }
+.modal-close {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    border: 0;
+    background: transparent;
+    font-size: 22px;
+    cursor: pointer;
+}
+.modal .btn { min-width: 100px; }
+
+/* WhatsApp icon link */
+.whatsapp-link { color: #25D366; margin-left: 8px; text-decoration: none; font-size: 18px; }
+.whatsapp-link i { vertical-align: middle; }
+
+/* Error modal styling (reuses .modal) */
+.modal.error { background: rgba(0,0,0,0.55); }
+.modal .modal-content h3 { color: #c53030; }
+
+/* Small toast for copy feedback */
+.toast {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    bottom: 28px;
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    opacity: 0;
+    transition: opacity .22s ease, transform .22s ease;
+    z-index: 10000;
+}
+.toast.show{ opacity: 1; transform: translateX(-50%) translateY(0); }
+
 /* ==================== FOOTER ==================== */
 .footer {
     background: var(--dark);
@@ -1527,3 +1609,58 @@ Voir les instructions dans le HTML pour personnaliser
         padding: 35px;
     }
 }
+
+/* ==================== PROJECT MODAL ==================== */
+.project-modal { display: none; position: fixed; inset: 0; z-index: 2000; }
+.project-modal.open { display: block; }
+.project-modal-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.6); }
+.project-modal-content { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); background: white; width: min(980px, 95%); max-height: 85vh; overflow: hidden; border-radius: 12px; box-shadow: var(--shadow-xl); }
+.project-modal .modal-body { padding: 22px; max-height: calc(85vh - 110px); overflow: auto; }
+.project-modal .modal-body h3 { margin-bottom: 12px; font-size: 22px; }
+.project-modal .modal-body p { color: var(--gray); line-height: 1.8; }
+.project-modal .detail-images { display:flex; gap:12px; margin-bottom:16px; }
+.project-modal .detail-images img { width:100%; max-width:820px; height:auto; border-radius:8px; object-fit:cover; }
+.modal-close { position:absolute; right:12px; top:8px; background:transparent; border:none; font-size:30px; line-height:1; cursor:pointer; }
+.modal-gallery-controls { position: absolute; bottom: 12px; right: 12px; display:flex; gap:8px; }
+.modal-gallery-controls button { background: var(--accent); color:white; border:none; padding:8px 12px; border-radius:8px; cursor:pointer; font-size:18px; }
+.project-actions { margin-top:12px; }
+.readmore-btn { background: var(--secondary); color: white; padding:10px 16px; border-radius:8px; border:none; cursor:pointer; font-weight:700; }
+.readmore-btn:hover { opacity:0.95; }
+
+/* Enhanced project visuals and project detail page styling */
+/* Override the default grid for better responsiveness */
+.projects-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.project-card { border-radius: 12px; box-shadow: 0 8px 26px rgba(10,15,25,0.06); overflow: hidden; display:flex; flex-direction:column; transition: transform .28s ease, box-shadow .28s ease; }
+.project-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(10,15,25,0.10); }
+.project-image { height: 200px; }
+.project-info { padding: 18px; display:flex; flex-direction:column; }
+.project-info h3 { margin-bottom:8px; font-size:1.05rem; }
+.project-info p { margin-bottom:12px; color:var(--gray); }
+.project-actions { display:flex; justify-content:flex-end; }
+.readmore-link.btn { background: var(--secondary); color: white; padding:10px 14px; border-radius:10px; font-weight:700; }
+.readmore-link.btn:hover { opacity:0.95; transform:translateY(-2px); }
+
+/* Project page */
+.project-page { max-width:1100px; margin:40px auto; padding:28px; }
+.project-hero { display:flex; gap:28px; align-items:flex-start; }
+.project-summary { flex:1; }
+.project-hero h1 { margin:0 0 8px; }
+.project-meta { margin:14px 0; display:flex; gap:14px; color:var(--gray); }
+
+.project-gallery { width:520px; max-width:100%; border-radius:10px; overflow:hidden; background:#0b0b0b; }
+.project-gallery .gallery-main { display:flex; align-items:center; justify-content:center; height:380px; background:#000; }
+.project-gallery .gallery-main img { width:100%; height:100%; object-fit:cover; display:block; }
+.project-gallery .gallery-thumbs { display:flex; gap:8px; padding:10px; justify-content:center; background:#fff; }
+.project-gallery .gallery-thumbs img { width:86px; height:62px; object-fit:cover; border-radius:6px; cursor:pointer; opacity:0.85; transition: transform .15s ease, opacity .15s ease; }
+.project-gallery .gallery-thumbs img.active { transform:scale(1.03); opacity:1; outline:3px solid rgba(14,165,164,0.14); }
+
+@media (max-width:900px){ .project-hero{ flex-direction:column-reverse; } .project-gallery{ width:100%; } }
+
+/* Fix header overlap on project pages */
+.project-page { padding: 120px 28px 28px; }
+.project-page .project-summary h1 { scroll-margin-top: 110px; }
+
+/* Back-to-top button styling (shared) */
+.back-to-top { position: fixed; right: 18px; bottom: 18px; background: var(--accent); color: #fff; width:48px; height:48px; display:flex; align-items:center; justify-content:center; border-radius:8px; box-shadow: var(--shadow-lg); cursor:pointer; z-index:1200; }
+.back-to-top i { font-size: 18px; }
+
