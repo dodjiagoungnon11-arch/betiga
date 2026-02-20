@@ -243,6 +243,7 @@ a {
     overflow: hidden;
     display: flex;
     align-items: center;
+    justify-content: center;
     background: var(--dark);
 }
 
@@ -282,6 +283,7 @@ Recommandation : Images haute résolution 1920x1080px minimum
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     filter: brightness(0.55);
 }
 
@@ -312,6 +314,7 @@ Recommandation : Images haute résolution 1920x1080px minimum
     margin: 0 auto;
     padding: 100px 40px;
     width: 100%;
+    min-height: auto;
 }
 
 .hero-grid {
@@ -1532,6 +1535,17 @@ Voir les instructions dans le HTML pour personnaliser
         gap: 55px;
     }
 
+    .about-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .about-image img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
     .services-grid,
     .projects-grid,
     .blog-grid {
@@ -1574,8 +1588,65 @@ Voir les instructions dans le HTML pour personnaliser
         display: flex;
     }
 
+    .hero {
+        min-height: auto;
+        padding: 60px 20px;
+    }
+
+    .hero-content {
+        padding: 40px 20px;
+    }
+
     .hero-text h2 {
-        font-size: 42px;
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .tagline {
+        font-size: 16px !important;
+    }
+
+    .hero-buttons {
+        gap: 10px;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .about-image {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+    }
+
+    .about-image img {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+        object-fit: cover;
+    }
+
+    .about-badge {
+        bottom: -20px;
+        right: -20px;
+        padding: 20px;
+    }
+
+    .about-badge .number {
+        font-size: 38px;
     }
 
     .services-grid,

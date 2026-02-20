@@ -5,6 +5,7 @@
   "main": "scripts/optimize-images.js",
   "scripts": {
     "optimize-images": "node scripts/optimize-images.js",
+    "optimize-aggressive": "node scripts/optimize-images-aggressive.js",
     "generate-responsive": "node scripts/generate-responsive.js",
     "apply-srcset": "node scripts/update-html-srcset.js"
   },
