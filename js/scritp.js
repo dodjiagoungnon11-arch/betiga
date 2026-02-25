@@ -10,10 +10,10 @@ AOS.init({
 
 // 2. Initialisation de la Carte interactive (WebGIS Preview)
 const initMap = () => {
-    const map = L.map('map', { 
+    const map = L.map('map', {
         zoomControl: false,
-        scrollWheelZoom: false 
-    }).setView([6.4913, 2.6276], 15); // Coordonnées Porto-Novo
+        scrollWheelZoom: false
+    }).setView([6.4913, 2.6276], 15); // Coordonnées Cotonou
 
     L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
         attribution: '© BETIGA SARL | Données Géospatiales'
@@ -55,10 +55,10 @@ AOS.init({
 
 // 2. Initialisation de la Carte interactive (WebGIS Preview)
 const initMap = () => {
-    const map = L.map('map', { 
+    const map = L.map('map', {
         zoomControl: false,
-        scrollWheelZoom: false 
-    }).setView([6.4913, 2.6276], 15); // Coordonnées Porto-Novo
+        scrollWheelZoom: false
+    }).setView([6.4913, 2.6276], 15); // Coordonnées Cotonou
 
     L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
         attribution: '© BETIGA SARL | Données Géospatiales'

@@ -1,18 +1,22 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>PROMAC — ToriBossito — BETIGA</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/page-styles.css">
 </head>
+
 <body>
   <nav class="navbar" id="navbar">
     <div class="nav-container">
@@ -30,34 +34,64 @@
     </div>
   </nav>
   <main class="project-page">
-    <div class="project-hero">
-      <div class="project-summary">
-        <h1>PROMAC — Délimitation et matérialisation — Tori-Bossito</h1>
-        <div class="project-meta"><span>Tori-Bossito (~50 hectares)</span><span>15 jours | Déc 2022 - Jan 2023</span></div>
-        <p>Travaux délimitation et matérialisation périmètre projet PROMAC (promotion aquaculture durable + pêche). Coordination topographique, implantation repères, cartes situation. Valeur : 1 860 000 FCFA.</p>
+    <div class="project-container-v2">
+      <!-- Hero Section -->
+      <div class="project-hero-v2" data-aos="fade-up">
+        <div class="project-info-main">
+          <div class="project-meta-v2">
+            <span><i class="fas fa-map-marker-alt"></i> Tori-Bossito</span>
+            <span><i class="fas fa-calendar-alt"></i> Janvier 2023</span>
+          </div>
+          <h1>Projet PROMAC - Délimitation et Matérialisation</h1>
+          <p class="project-overview">
+            Mission technique de haute précision pour le projet "PROMAC" à Tori-Bossito.
+            Nous avons assuré la délimitation et la matérialisation de zones stratégiques,
+            garantissant la pérennité des aménagements et une visibilité optimale des limites territoriales sur le
+            terrain.
+          </p>
+        </div>
+
+        <div class="project-gallery">
+          <div class="gallery-main">
+            <img src="../image/PROMAC.jpeg" alt="Projet PROMAC main">
+          </div>
+          <div class="gallery-thumbs">
+            <img src="../image/PROMAC.jpeg" class="active" alt="Vue 1">
+          </div>
+        </div>
       </div>
-      <div class="project-gallery">
-        <div class="gallery-main"><img src="../image/PROMAC.jpeg" alt="promac main"></div>
-        <div class="gallery-thumbs">
-           <img data-src="../image/PROMAC.jpeg" src="../image/PROMAC.jpeg" alt="thumb1">
-        
+
+      <!-- Details Grid -->
+      <div class="project-details-grid">
+        <div class="details-card" data-aos="fade-up" data-aos-delay="100">
+          <h2><i class="fas fa-clipboard-check"></i> Services rendus</h2>
+          <ul class="service-list">
+            <li><i class="fas fa-check"></i> Coordination et supervision des travaux topographiques complexes.</li>
+            <li><i class="fas fa-check"></i> Réalisation de cartes de situation et de localisation.</li>
+            <li><i class="fas fa-check"></i> Analyse topographique et cartographie des bassins versants.</li>
+            <li><i class="fas fa-check"></i> Élaboration des rapports techniques de relevés et d'implantation.</li>
+          </ul>
+        </div>
+
+        <div class="details-card" data-aos="fade-up" data-aos-delay="200">
+          <h2><i class="fas fa-info-circle"></i> Info Projet</h2>
+          <ul class="service-list">
+            <li><strong>Projet:</strong> PROMAC</li>
+            <li><strong>Lieu:</strong> Tori-Bossito</li>
+            <li><strong>Surface:</strong> ~50 hectares</li>
+          </ul>
         </div>
       </div>
     </div>
-    <section style="margin-top:28px; background:white; padding:22px; border-radius:12px; box-shadow:0 8px 28px rgba(10,15,25,0.04);">
-      <h2>Services rendus</h2>
-      <p><strong>Objectif :</strong> Rendre ouvrages repérables terrain, fournir zonage validé + notice technique implantation.</p>
-      <p style="margin-top:12px;"><strong>Activités :</strong> Coordination travaux topographiques, cartes situation, cartes bassins versants, rapports techniques implantation, relevés de terrain.</p>
-      <p style="margin-top:12px;"><strong>Chef projet :</strong> GNASSOUNOU Marius (Expert géomètre) | <strong>Autorité :</strong> Mairie Tori-Bossito | <strong>Livrables :</strong> Repères SIG + instructions implantation infrastructure</p>
-    </section>
   </main>
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-grid">
         <div class="footer-about">
           <h3>BETIGA SARL</h3>
-          <p>Bureau d'Études Techniques d'Ingénieurs de Géomatique et d'Aménagement. 
-            L'innovation géospatiale pour des solutions durables au service du développement territorial du Bénin et de l'Afrique.
+          <p>Bureau d'Études Techniques d'Ingénieurs de Géomatique et d'Aménagement.
+            L'innovation géospatiale pour des solutions durables au service du développement territorial du Bénin et de
+            l'Afrique.
           </p>
         </div>
         <div class="footer-section">
@@ -76,13 +110,14 @@
             <li><a href="../index.html#accueil"><i class="fas fa-angle-right"></i> Accueil</a></li>
             <li><a href="../index.html#apropos"><i class="fas fa-angle-right"></i> À propos</a></li>
             <li><a href="../index.html#projets"><i class="fas fa-angle-right"></i> Projets</a></li>
-            <li><a href="../privacy-policy.html"><i class="fas fa-angle-right"></i> Politique de confidentialité</a></li>
+            <li><a href="../privacy-policy.html"><i class="fas fa-angle-right"></i> Politique de confidentialité</a>
+            </li>
           </ul>
         </div>
         <div class="footer-section">
           <h4>Coordonnées</h4>
           <ul class="footer-links">
-            <li><i class="fas fa-map-marker-alt"></i> 01 BP: 3112, Porto-Novo, Bénin</li>
+            <li><i class="fas fa-map-marker-alt"></i> 01 BP: 3112, Cotonou, Bénin</li>
             <li><i class="fas fa-phone"></i> 01 69 49 30 33</li>
             <li><a href="mailto:sbetiga@gmail.com"><i class="fas fa-envelope"></i> sbetiga@gmail.com</a></li>
             <li><i class="fas fa-clock"></i> Lun - Ven: 8h00 - 18h30</li>
@@ -90,13 +125,17 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 BETIGA SARL. Tous droits réservés. | Conçu avec expertise et passion pour l'excellence géospatiale.</p>
+        <p>&copy; 2026 BETIGA SARL. Tous droits réservés. | Conçu avec expertise et passion pour l'excellence
+          géospatiale.</p>
       </div>
     </div>
   </footer>
   <div class="back-to-top" id="backToTop">
     <i class="fas fa-arrow-up"></i>
   </div>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="../js/main.js"></script>
 </body>
+
 </html>

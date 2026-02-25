@@ -13,7 +13,28 @@ body {
     scroll-behavior: smooth;
 }
 
-h1, h2, h3, .font-heading {
+/* Personnalisation de la Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--geo-cyan);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--geo-blue-main);
+}
+
+h1,
+h2,
+h3,
+.font-heading {
     font-family: 'Space Grotesk', sans-serif;
 }
 
@@ -25,9 +46,17 @@ h1, h2, h3, .font-heading {
 
 /* Animation de flottement pour les éléments technologiques */
 @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0px); }
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 .animate-float {
@@ -51,7 +80,7 @@ h1, h2, h3, .font-heading {
 /* Barre de navigation intelligente */
 .nav-scrolled {
     background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     height: 80px !important;
 }
 
@@ -101,7 +130,12 @@ body {
     background: var(--white);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     line-height: 1.2;
@@ -148,7 +182,9 @@ a {
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* ==================== NAVIGATION ==================== */

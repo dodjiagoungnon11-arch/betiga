@@ -1,56 +1,211 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Politique de confidentialité — BETIGA SARL</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0A4D68;
+            --secondary: #088395;
+            --accent: #05BFDB;
+            --dark: #05161A;
+            --light: #F8FAFB;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light);
+            color: #334155;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .privacy-page {
+            max-width: 900px;
+            margin: 60px auto;
+            background: #fff;
+            padding: 50px 60px;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+        }
+
+        header {
+            border-bottom: 2px solid #f1f5f9;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: var(--dark);
+            font-family: 'Poppins', sans-serif;
+            font-size: 36px;
+            margin-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .date {
+            color: #94a3b8;
+            font-size: 15px;
+            margin: 0;
+        }
+
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary);
+            font-size: 22px;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        h2 i {
+            color: var(--accent);
+            font-size: 20px;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        a {
+            color: var(--secondary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 25px;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 12px;
+        }
+
+        ul li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 40px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            color: white !important;
+            border-radius: 12px;
+            text-decoration: none !important;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(5, 191, 219, 0.2);
+        }
+
+        .back-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(5, 191, 219, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .privacy-page {
+                margin: 20px;
+                padding: 30px 20px;
+                border-radius: 16px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <main class="container" style="padding:24px; max-width:900px; margin:0 auto;">
-        <h1>Politique de confidentialité</h1>
-        <p>Dernière mise à jour : 18 février 2026</p>
+    <div class="privacy-page">
+        <header>
+            <h1><i class="fas fa-shield-halved"></i> Politique de confidentialité</h1>
+            <p class="date">Dernière mise à jour : 24 février 2026</p>
+        </header>
 
-        <h2>1. Responsable du traitement</h2>
-        <p>Le responsable du traitement des données collectées via ce site est <strong>BETIGA SARL</strong>.<br>
-        Contact : <a href="mailto:sbetiga@gmail.com">sbetiga@gmail.com</a> — WhatsApp : <a href="https://wa.me/2290169493033" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> 01 69 49 30 33</a></p>
+        <section>
+            <h2><i class="fas fa-user-tie"></i> 1. Responsable du traitement</h2>
+            <p>Le responsable du traitement des données collectées via ce site est <strong>BETIGA SARL</strong>.<br>
+                Contact : <a href="mailto:sbetiga@gmail.com">sbetiga@gmail.com</a> — WhatsApp : <a
+                    href="https://wa.me/2290169493033" target="_blank" rel="noopener">01 69 49 30 33</a></p>
 
-        <h2>2. Données collectées</h2>
-        <p>Les données collectées via le formulaire de contact comprennent : nom, email, téléphone, sujet, message et éventuelle pièce jointe (PDF/DXF/SGP). Nous recommandons de ne pas envoyer d'informations sensibles (numéros d'identité, informations bancaires) via le formulaire.</p>
+            <h2><i class="fas fa-database"></i> 2. Données collectées</h2>
+            <p>Les données collectées via le formulaire de contact comprennent : nom, email, téléphone, sujet, message
+                et éventuelle pièce jointe (PDF/DXF). Nous recommandons de ne pas envoyer d'informations bancaires ou
+                trop sensibles via le formulaire.</p>
 
-        <h2>3. Finalités et base légale</h2>
-        <p>Les données sont traitées afin de répondre à vos demandes de contact, devis ou informations. La base légale est le consentement que vous donnez en soumettant le formulaire et l'exécution d'actions précontractuelles à votre demande.</p>
+            <h2><i class="fas fa-gavel"></i> 3. Finalités et base légale</h2>
+            <p>Les données sont traitées afin de répondre à vos demandes de contact, devis ou informations. La base
+                légale est le consentement que vous donnez en soumettant le formulaire.</p>
 
-        <h2>4. Destinataires / Sous-traitants</h2>
-        <p>Les messages envoyés via le formulaire sont transmis au service <strong>FormSubmit.co</strong> (ou autre service de formulaire configuré). D'autres services tiers utilisés sur le site (CDN, polices, bibliothèques) sont : Google Fonts, Font Awesome (CDN), AOS, Leaflet, Unsplash (images) et Google Maps iframe. Ces prestataires peuvent recevoir certaines données techniques (IP, requêtes) ; leurs politiques sont disponibles sur leurs sites respectifs.</p>
-        <ul>
-            <li><a href="https://formsubmit.co/">FormSubmit</a></li>
-            <li><a href="https://policies.google.com/privacy">Google</a> (Fonts, Maps)</li>
-            <li><a href="https://fontawesome.com/privacy-policy">Font Awesome</a></li>
-        </ul>
+            <h2><i class="fas fa-share-nodes"></i> 4. Destinataires et Sous-traitants</h2>
+            <p>Les messages envoyés via le formulaire sont transmis au service <strong>FormSubmit.co</strong>. D'autres
+                services tiers (CDN, polices, cartes géographiques) sont utilisés sur le site :</p>
+            <ul>
+                <li><a href="https://formsubmit.co/" target="_blank">FormSubmit</a> (Acheminement des emails)</li>
+                <li><a href="https://policies.google.com/privacy" target="_blank">Google Fonts & Maps</a> (Rendu visuel)
+                </li>
+                <li><a href="https://fontawesome.com/privacy-policy" target="_blank">Font Awesome</a> (Icônes)</li>
+            </ul>
 
-        <h2>5. Cookies et suivi</h2>
-        <p>Le site utilise des ressources externes qui peuvent déposer des cookies (par ex. Google Maps, polices). À ce jour, aucun outil d'analyse (Google Analytics, Matomo) n'est activé par défaut. Si vous activez des services d'analyse à l'avenir, ils seront mentionnés ici et un consentement explicite sera demandé avant dépôt.</p>
+            <h2><i class="fas fa-clock"></i> 5. Conservation des données</h2>
+            <p>Les messages reçus via le formulaire sont conservés aussi longtemps que nécessaire pour répondre et
+                traiter la demande, puis archivés conformément aux besoins administratifs.</p>
 
-        <h2>6. Conservation des données</h2>
-        <p>Les messages reçus via le formulaire sont conservés aussi longtemps que nécessaire pour répondre et traiter la demande, puis archivés conformément aux besoins administratifs. Les pièces jointes sont conservées uniquement pour la durée nécessaire au traitement de la demande.</p>
+            <h2><i class="fas fa-user-check"></i> 6. Vos droits</h2>
+            <p>Vous disposez d'un droit d'accès, de rectification, d'effacement et d'opposition. Pour exercer vos droits
+                sur vos données, contactez-nous directement à <a href="mailto:sbetiga@gmail.com">sbetiga@gmail.com</a>.
+            </p>
 
-        <h2>7. Vos droits</h2>
-        <p>Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation du traitement, d'opposition et de portabilité des données vous concernant. Pour exercer vos droits, contactez-nous à <a href="mailto:sbetiga@gmail.com">sbetiga@gmail.com</a>.</p>
+            <h2><i class="fas fa-lock"></i> 7. Sécurité</h2>
+            <p>Nous mettons en œuvre des mesures de sécurité raisonnables pour protéger vos données contre l'accès non
+                autorisé lors du transit depuis le formulaire de contact.</p>
 
-        <h2>8. Sécurité</h2>
-        <p>Nous mettons en œuvre des mesures techniques et organisationnelles raisonnables pour protéger vos données contre la perte et l'accès non autorisé. Cependant, la transmission par Internet n'est jamais totalement sûre ; n'envoyez pas d'informations hautement sensibles via le formulaire.</p>
+            <h2><i class="fas fa-bullhorn"></i> 8. Contact et réclamations</h2>
+            <p>Pour toute question sur vos données, écrivez à <a href="mailto:sbetiga@gmail.com">sbetiga@gmail.com</a>.
+            </p>
+        </section>
 
-        <h2>9. Transferts internationaux</h2>
-        <p>Certains prestataires tiers peuvent transférer des données en dehors de l'Union européenne. Ces prestataires publient leurs garanties et politiques de confidentialité ; nous vous invitons à consulter les liens fournis ci-dessus.</p>
-
-        <h2>10. Modifications de la politique</h2>
-        <p>Nous pouvons mettre à jour cette politique ; la date en haut de la page indique la dernière modification.</p>
-
-        <h2>11. Contact et réclamation</h2>
-        <p>Pour des questions concernant vos données, écrivez à <a href="mailto:sbetiga@gmail.com">sbetiga@gmail.com</a>. Vous pouvez également porter réclamation auprès de l'autorité de protection des données compétente.</p>
-
-        <p style="margin-top:24px;"><a href="index.html">Retour au site</a></p>
-    </main>
+        <div style="text-align: center;">
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Retour au site</a>
+        </div>
+    </div>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -7,14 +8,21 @@
   <meta name="robots" content="index,follow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/page-styles.css">
-  <style>body{background:#f7f9fb}</style>
+  <style>
+    body {
+      background: #f7f9fb
+    }
+  </style>
 </head>
+
 <body>
   <!-- full header (same as site) -->
   <nav class="navbar" id="navbar">
@@ -33,27 +41,58 @@
     </div>
   </nav>
   <main class="project-page">
-    <div class="project-hero">
-      <div class="project-summary">
-        <h1>Aménagement foncier — Banikoara</h1>
-        <div class="project-meta"><span>Banikoara</span><span>2024</span></div>
-        <p>Levé topographique complet pour l'aménagement d'une zone résidentielle de 50 hectares incluant voiries, réseaux divers et espaces verts. Prestations : campagnes GNSS et tachéométriques, modélisation numérique du terrain, plans de lotissement et métrés.</p>
-        <p style="margin-top:18px;">Livrables : plans topographiques, bordereaux et assistance pour la phase d'implantation. Partenaires : mairie locale et bureau d'urbanisme.</p>
+    <div class="project-container-v2">
+      <!-- Hero Section -->
+      <div class="project-hero-v2" data-aos="fade-up">
+        <div class="project-info-main">
+          <div class="project-meta-v2">
+            <span><i class="fas fa-map-marker-alt"></i> Lokossa (Adjakomey)</span>
+            <span><i class="fas fa-calendar-alt"></i> 2021</span>
+          </div>
+          <h1>Travaux d'étude topographique sur le site retenu à Adjakomey</h1>
+          <p class="project-overview">
+            Réalisation d'études topographiques approfondies sur le site stratégique d'Adjakomey.
+            Ce projet constitue une étape cruciale pour l'implantation future de la station de traitement des boues de
+            la Commune de Lokossa,
+            garantissant une précision technique indispensable à la réussite des infrastructures environnementales.
+          </p>
+        </div>
+
+        <div class="project-gallery">
+          <div class="gallery-main">
+            <img src="../image/1.jpg" alt="Projet Adjakomey main">
+          </div>
+          <div class="gallery-thumbs">
+            <img src="../image/1.jpg" class="active" alt="Vue 1">
+            <img src="../image/1'.jpg" alt="Vue 2">
+            <img src="../image/1''.jpg" alt="Vue 3">
+          </div>
+        </div>
       </div>
 
-      <div class="project-gallery">
-        <div class="gallery-main"><img src="../image/1.jpg" alt="Banikoara main"></div>
-        <div class="gallery-thumbs">
-            <img data-src="../image/1.jpg" src="../image/1.jpg" alt="thumb1">
-            <img data-src="../image/1'.jpg" src="../image/1'.jpg" alt="thumb2">
-            <img data-src="../image/1''.jpg" src="../image/1''.jpg" alt="thumb3">
+      <!-- Details Grid -->
+      <div class="project-details-grid">
+        <div class="details-card" data-aos="fade-up" data-aos-delay="100">
+          <h2><i class="fas fa-clipboard-check"></i> Services rendus</h2>
+          <ul class="service-list">
+            <li><i class="fas fa-check"></i> Élaboration du rapport détaillé de l'étude topographique complète.</li>
+            <li><i class="fas fa-check"></i> Réalisation des levés topographiques haute précision du site
+              d'implantation.</li>
+            <li><i class="fas fa-check"></i> Analyse spatiale pour l'optimisation de l'emplacement de la station de
+              traitement.</li>
+          </ul>
+        </div>
+
+        <div class="details-card" data-aos="fade-up" data-aos-delay="200">
+          <h2><i class="fas fa-info-circle"></i> Info Projet</h2>
+          <ul class="service-list">
+            <li><strong>Client:</strong> Commune de Lokossa</li>
+            <li><strong>Secteur:</strong> Environnement & Assainissement</li>
+            <li><strong>Status:</strong> Terminé avec succès</li>
+          </ul>
         </div>
       </div>
     </div>
-    <section style="margin-top:28px; background:white; padding:22px; border-radius:12px; box-shadow:0 8px 28px rgba(10,15,25,0.04);">
-      <h2>Contexte et méthode</h2>
-      <p>Intervention sur site pour relevés GNSS, implantation topographique, production de plans et notice technique d'implantation.</p>
-    </section>
   </main>
   <!-- footer (copied from main site) -->
   <footer class="footer">
@@ -61,8 +100,9 @@
       <div class="footer-grid">
         <div class="footer-about">
           <h3>BETIGA SARL</h3>
-          <p>Bureau d'Études Techniques d'Ingénieurs de Géomatique et d'Aménagement. 
-            L'innovation géospatiale pour des solutions durables au service du développement territorial du Bénin et de l'Afrique.
+          <p>Bureau d'Études Techniques d'Ingénieurs de Géomatique et d'Aménagement.
+            L'innovation géospatiale pour des solutions durables au service du développement territorial du Bénin et de
+            l'Afrique.
           </p>
         </div>
         <div class="footer-section">
@@ -81,13 +121,14 @@
             <li><a href="../index.html#accueil"><i class="fas fa-angle-right"></i> Accueil</a></li>
             <li><a href="../index.html#apropos"><i class="fas fa-angle-right"></i> À propos</a></li>
             <li><a href="../index.html#projets"><i class="fas fa-angle-right"></i> Projets</a></li>
-            <li><a href="../privacy-policy.html"><i class="fas fa-angle-right"></i> Politique de confidentialité</a></li>
+            <li><a href="../privacy-policy.html"><i class="fas fa-angle-right"></i> Politique de confidentialité</a>
+            </li>
           </ul>
         </div>
         <div class="footer-section">
           <h4>Coordonnées</h4>
           <ul class="footer-links">
-            <li><i class="fas fa-map-marker-alt"></i> 01 BP: 3112, Porto-Novo, Bénin</li>
+            <li><i class="fas fa-map-marker-alt"></i> 01 BP: 3112, Cotonou, Bénin</li>
             <li><i class="fas fa-phone"></i> 01 69 49 30 33</li>
             <li><a href="mailto:sbetiga@gmail.com"><i class="fas fa-envelope"></i> sbetiga@gmail.com</a></li>
             <li><i class="fas fa-clock"></i> Lun - Ven: 8h00 - 18h30</li>
@@ -95,13 +136,17 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 BETIGA SARL. Tous droits réservés. | Conçu avec expertise et passion pour l'excellence géospatiale.</p>
+        <p>&copy; 2026 BETIGA SARL. Tous droits réservés. | Conçu avec expertise et passion pour l'excellence
+          géospatiale.</p>
       </div>
     </div>
   </footer>
   <div class="back-to-top" id="backToTop">
     <i class="fas fa-arrow-up"></i>
   </div>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="../js/main.js"></script>
 </body>
+
 </html>
