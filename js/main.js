@@ -179,7 +179,51 @@ function buildCarousel() {
     // Placeholder if needed for specific carousels
 }
 
-// --- Contact Form ---
+// --- Modal System ---
+
+function showSuccessModal(text) {
+    let m = document.getElementById('successModal');
+
+    const closeModal = () => {
+        if (!m) return;
+        m.classList.remove('open');
+        m.style.display = 'none';
+        m.setAttribute('aria-hidden', 'true');
+    };
+
+    if (!m) {
+        // Fallback: create modal if it doesn't exist in HTML
+        m = document.createElement('div');
+        m.id = 'successModal';
+        m.className = 'modal';
+        m.innerHTML = `
+            <div class="modal-content">
+                <button class="modal-close-btn" style="position:absolute; top:10px; right:15px; border:none; background:none; font-size:20px; cursor:pointer;">×</button>
+                <div class="modal-iconSuccess"><i class="fas fa-check-circle"></i></div>
+                <h3>Succès !</h3>
+                <p>${text}</p>
+                <button class="btn btn-primary modal-ok-btn" style="margin-top:20px;">D'accord</button>
+            </div>`;
+        document.body.appendChild(m);
+    } else {
+        // Use existing modal in HTML
+        const bodyContent = m.querySelector('.modal-body') || m.querySelector('p');
+        if (bodyContent) bodyContent.textContent = text;
+    }
+
+    // Always attach/re-attach listeners to be safe (handles all possible classes)
+    const triggers = m.querySelectorAll('.modal-close, .modal-ok, .modal-close-btn, .modal-ok-btn');
+    triggers.forEach(t => {
+        t.onclick = closeModal;
+    });
+
+    // Show it: override any inline display:none and then add class for transitions
+    m.style.display = 'flex';
+    setTimeout(() => {
+        m.classList.add('open');
+        m.setAttribute('aria-hidden', 'false');
+    }, 10);
+}
 
 function setupForm() {
     const form = document.getElementById('contactForm');
@@ -206,7 +250,7 @@ function setupForm() {
         msg.textContent = 'Envoi en cours...';
 
         const fd = new FormData(form);
-        const endpoint = 'https://formsubmit.co/ajax/sbetiga@gmail.com';
+        const endpoint = 'https://formsubmit.co/ajax/dodjiagoungnon11@gmail.com';
 
         try {
             const res = await fetch(endpoint, {
@@ -214,40 +258,28 @@ function setupForm() {
                 headers: { 'Accept': 'application/json' },
                 body: fd
             });
-            if (res.ok) {
+            const data = await res.json();
+
+            if (res.ok && data.success !== "false") {
+                msg.classList.remove('error');
                 msg.classList.add('success');
                 msg.textContent = 'Message envoyé avec succès. Nous vous répondrons sous 24h.';
                 form.reset();
                 showSuccessModal('Votre message a bien été envoyé !');
-            } else { throw new Error(); }
+            } else {
+                // Handle FormSubmit specific error messages
+                let errorText = 'Erreur lors de l\'envoi. Réessayez.';
+                if (data.message && data.message.includes('web server')) {
+                    errorText = 'FormSubmit : Utilisez un serveur web (GitHub Pages/Live Server) pour tester l\'envoi.';
+                }
+                throw new Error(errorText);
+            }
         } catch (err) {
+            msg.classList.remove('success');
             msg.classList.add('error');
-            msg.textContent = 'Erreur lors de l\'envoi. Réessayez.';
+            msg.textContent = err.message || 'Erreur lors de l\'envoi. Réessayez.';
         }
     });
-}
-
-function showSuccessModal(text) {
-    let m = document.getElementById('successModal');
-    if (!m) {
-        m = document.createElement('div'); m.id = 'successModal'; m.className = 'modal';
-        m.innerHTML = `
-            <div class="modal-content">
-                <div class="modal-iconSuccess"><i class="fas fa-check-circle"></i></div>
-                <h3>Succès !</h3>
-                <p>${text}</p>
-                <button class="btn btn-primary modal-close-btn">D'accord</button>
-            </div>`;
-        document.body.appendChild(m);
-
-        // Add event listener to the button
-        m.querySelector('.modal-close-btn').addEventListener('click', () => {
-            m.classList.remove('open');
-        });
-    } else {
-        m.querySelector('p').textContent = text;
-    }
-    m.classList.add('open');
 }
 
 // --- Utils ---
