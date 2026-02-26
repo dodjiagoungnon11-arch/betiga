@@ -281,13 +281,15 @@ function setupForm() {
                 form.reset();
                 showSuccessModal('Votre message a bien été envoyé. Nous vous répondrons sous 24h.');
             } else {
-                throw new Error("Erreur " + res.status + " : " + res.text);
+                // EmailJS renvoie souvent l'explication dans res.text (ex: "Account not found")
+                throw new Error("Erreur " + res.status + " : " + (res.text || "Requête invalide"));
             }
         } catch (err) {
             msg.classList.remove('success');
             msg.classList.add('error');
-            msg.textContent = 'Erreur lors de l\'envoi. Vérifiez la taille du fichier ou vos IDs EmailJS.';
-            console.error('EmailJS Full Error:', err);
+            msg.textContent = 'Erreur lors de l\'envoi. Vérifiez la console (F12) pour le détail.';
+            console.error('EmailJS Debug:', err);
+            if (err.text) console.error('Détail technique EmailJS:', err.text);
         }
     });
 }
