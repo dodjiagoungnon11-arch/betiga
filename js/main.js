@@ -249,35 +249,35 @@ function setupForm() {
         msg.className = 'form-message show';
         msg.textContent = 'Envoi en cours...';
 
-        const fd = new FormData(form);
-        const endpoint = 'https://formsubmit.co/ajax/dodjiagoungnon11@gmail.com';
+        // EmailJS Configuration
+        const SERVICE_ID = 'service_2juar3r';
+        const TEMPLATE_ID = 'template_ksgzkoj';
+
+        // Détection des placeholders non remplis
+        if (SERVICE_ID === 'service_votre_id' || TEMPLATE_ID === 'template_votre_id') {
+            msg.className = 'form-message show error';
+            msg.innerHTML = `⚠️ <strong>Configuration incomplète :</strong><br>Vous devez remplacer <code>service_votre_id</code> et <code>template_votre_id</code> par vos vraies clés dans le fichier <code>js/main.js</code>.`;
+            return;
+        }
 
         try {
-            const res = await fetch(endpoint, {
-                method: 'POST',
-                headers: { 'Accept': 'application/json' },
-                body: fd
-            });
-            const data = await res.json();
+            // Utilisation de emailjs.sendForm(serviceID, templateID, formElement)
+            const res = await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, this);
 
-            if (res.ok && data.success !== "false") {
+            if (res.status === 200) {
                 msg.classList.remove('error');
                 msg.classList.add('success');
-                msg.textContent = 'Message envoyé avec succès. Nous vous répondrons sous 24h.';
+                msg.textContent = 'Message envoyé avec succès via EmailJS !';
                 form.reset();
-                showSuccessModal('Votre message a bien été envoyé !');
+                showSuccessModal('Votre message a bien été envoyé. Nous vous répondrons sous 24h.');
             } else {
-                // Handle FormSubmit specific error messages
-                let errorText = 'Erreur lors de l\'envoi. Réessayez.';
-                if (data.message && data.message.includes('web server')) {
-                    errorText = 'FormSubmit : Utilisez un serveur web (GitHub Pages/Live Server) pour tester l\'envoi.';
-                }
-                throw new Error(errorText);
+                throw new Error("Le service EmailJS a renvoyé une erreur.");
             }
         } catch (err) {
             msg.classList.remove('success');
             msg.classList.add('error');
-            msg.textContent = err.message || 'Erreur lors de l\'envoi. Réessayez.';
+            msg.textContent = 'Erreur lors de l\'envoi. Vérifiez vos clés EmailJS ou votre connexion.';
+            console.error('EmailJS Error:', err);
         }
     });
 }

@@ -28,6 +28,9 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="image/logo.jpeg">
+
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -915,8 +918,7 @@
                     Utilisation : FormSubmit.co (POST vers une adresse email).
                     Ajout : `enctype` pour pièces jointes, champ de consentement obligatoire.
                     -->
-                    <form id="contactForm" action="https://formsubmit.co/dodjiagoungnon11@gmail.com" method="POST"
-                        enctype="multipart/form-data">
+                    <form id="contactForm">
                         <!-- FormSubmit options -->
                         <input type="hidden" name="_subject" value="Nouveau message depuis le site BETIGA">
                         <input type="hidden" name="_captcha" value="false">
@@ -1066,6 +1068,16 @@
 
     <!-- Leaflet pour Google Maps -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // Initialisation avec votre Clé Publique (Public Key)
+            // REMPLACER "VOTRE_CLE_PUBLIQUE" par la vraie clé
+            emailjs.init("lQ5X0KAdIuEmgWkHv");
+        })();
+    </script>
 
     <!-- JavaScript Principal -->
     <script src="js/main.js"></script>
