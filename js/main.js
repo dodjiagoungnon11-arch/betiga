@@ -250,18 +250,28 @@ function setupForm() {
         msg.textContent = 'Envoi en cours...';
 
         // EmailJS Configuration
-        const SERVICE_ID = 'service_2juar3r';
+        const SERVICE_ID = 'service_43v06hi';
         const TEMPLATE_ID = 'template_0u7rqso';
 
-        // Détection des placeholders non remplis
+        // 1. Détection des placeholders non remplis
         if (SERVICE_ID === 'service_votre_id' || TEMPLATE_ID === 'template_votre_id') {
             msg.className = 'form-message show error';
-            msg.innerHTML = `⚠️ <strong>Configuration incomplète :</strong><br>Vous devez remplacer <code>service_votre_id</code> et <code>template_votre_id</code> par vos vraies clés dans le fichier <code>js/main.js</code>.`;
+            msg.innerHTML = `⚠️ <strong>Configuration incomplète :</strong><br>Vous devez remplacer les clés par vos vrais IDs dans <code>js/main.js</code>.`;
             return;
         }
 
+        // 2. Vérification de la taille du fichier (EmailJS Free = limite 50 Ko)
+        const fileInput = form.querySelector('input[type="file"]');
+        if (fileInput && fileInput.files.length > 0) {
+            const fileSize = fileInput.files[0].size / 1024; // Taille en Ko
+            if (fileSize > 50) {
+                msg.className = 'form-message show error';
+                msg.innerHTML = `⚠️ <strong>Fichier trop lourd (${Math.round(fileSize)} Ko) :</strong><br>La version gratuite d'EmailJS limite les pièces jointes à <strong>50 Ko</strong>. Veuillez envoyer un fichier plus petit ou tester sans fichier.`;
+                return;
+            }
+        }
+
         try {
-            // Utilisation de emailjs.sendForm(serviceID, templateID, formElement)
             const res = await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, this);
 
             if (res.status === 200) {
@@ -271,13 +281,13 @@ function setupForm() {
                 form.reset();
                 showSuccessModal('Votre message a bien été envoyé. Nous vous répondrons sous 24h.');
             } else {
-                throw new Error("Le service EmailJS a renvoyé une erreur.");
+                throw new Error("Erreur " + res.status + " : " + res.text);
             }
         } catch (err) {
             msg.classList.remove('success');
             msg.classList.add('error');
-            msg.textContent = 'Erreur lors de l\'envoi. Vérifiez vos clés EmailJS ou votre connexion.';
-            console.error('EmailJS Error:', err);
+            msg.textContent = 'Erreur lors de l\'envoi. Vérifiez la taille du fichier ou vos IDs EmailJS.';
+            console.error('EmailJS Full Error:', err);
         }
     });
 }
