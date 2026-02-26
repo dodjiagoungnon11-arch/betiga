@@ -251,7 +251,7 @@ function setupForm() {
 
         // EmailJS Configuration
         const SERVICE_ID = 'service_2juar3r';
-        const TEMPLATE_ID = 'template_ksgzkoj';
+        const TEMPLATE_ID = 'template_0u7rqso';
 
         // Détection des placeholders non remplis
         if (SERVICE_ID === 'service_votre_id' || TEMPLATE_ID === 'template_votre_id') {
