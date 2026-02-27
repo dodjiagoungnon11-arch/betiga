@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Enregistrement Individuel au Cadastre — BETIGA SARL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="image/logo.jpeg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/page-styles.css">
+    <link rel="stylesheet" href="css/polish.css">
+    <style>
+        .cadastre-page {
+            padding-top: 120px;
+            padding-bottom: 80px;
+        }
+
+        .cadastre-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .service-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .service-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .service-header p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .price-section {
+            margin-bottom: 60px;
+        }
+
+        .price-table-wrapper {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-top: 30px;
+        }
+
+        .price-table-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        .price-table th {
+            background: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .price-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+            color: var(--secondary);
+        }
+
+        .price-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .price-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .info-card h3 {
+            color: var(--primary);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.5rem;
+        }
+
+        .info-card h3 i {
+            color: var(--accent);
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-card ul li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            gap: 15px;
+            line-height: 1.6;
+        }
+
+        .info-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        .info-card ul li::before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--accent);
+        }
+
+        .procedure-list {
+            counter-reset: step-counter;
+        }
+
+        .procedure-list li {
+            counter-increment: step-counter;
+            position: relative;
+            padding-left: 50px !important;
+        }
+
+        .procedure-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .cta-box {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 60px;
+            border-radius: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-box p {
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-btn-large {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: white;
+            color: var(--primary);
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-btn-large:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            background: var(--accent);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-header h1 {
+                font-size: 2rem;
+            }
+
+            .cta-box {
+                padding: 40px 20px;
+            }
+
+            .cta-box h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar (Simplified) -->
+    <nav class="navbar nav-scrolled" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="image/logo.jpeg" alt="Logo BETIGA SARL" class="logo-img">
+                </a>
+            </div>
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Retour à l'accueil
+            </a>
+        </div>
+    </nav>
+
+    <main class="cadastre-page">
+        <div class="cadastre-container">
+            <section class="service-header" data-aos="fade-up">
+                <h1>Enregistrement Individuel au Cadastre</h1>
+                <p>Simplifiez vos démarches administratives et sécurisez votre patrimoine foncier grâce à notre
+                    expertise. Nous vous accompagnons de la programmation à la soumission sur la plateforme nationale.
+                </p>
+            </section>
+
+            <section class="price-section" data-aos="fade-up">
+                <h2 class="section-title">Grille Tarifaire Officielle</h2>
+                <div class="price-table-wrapper price-table-container">
+                    <table class="price-table">
+                        <thead>
+                            <tr>
+                                <th>Tranche de superficie</th>
+                                <th>Montant TTC (FCFA)</th>
+                                <th>Observation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0 à 500 m²</td>
+                                <td>225 000</td>
+                                <td>Standard</td>
+                            </tr>
+                            <tr>
+                                <td>501 m² à 1000 m²</td>
+                                <td>250 000</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>1001 m² à 5000 m²</td>
+                                <td>312 000</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>5001 m² à 1 ha</td>
+                                <td>437 500</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>1 ha à 2 ha</td>
+                                <td>500 000</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>2 ha à 5 ha</td>
+                                <td>526 000</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>5 ha à 10 ha</td>
+                                <td>687 500</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>10 ha à 20 ha</td>
+                                <td>812 500</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>> 20 ha</td>
+                                <td>812 500 + (N * 10 000)</td>
+                                <td>N = nombre d'hectares suppl.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <div class="info-grid">
+                <section class="info-card" data-aos="fade-right">
+                    <h3><i class="fas fa-file-invoice"></i> Pièces à fournir</h3>
+                    <ul>
+                        <li>Convention de vente avec les noms des limitrophes</li>
+                        <li>Un levé topographique de la parcelle avec les noms des limitrophes</li>
+                        <li>Le CIP valide du propriétaire de la parcelle</li>
+                        <li>Quitus fiscal</li>
+                    </ul>
+                </section>
+
+                <section class="info-card" data-aos="fade-left">
+                    <h3><i class="fas fa-tasks"></i> Procédure à suivre</h3>
+                    <ul class="procedure-list">
+                        <li>Faire la programmation</li>
+                        <li>Envoyer une invitation au CQ et aux limitrophes</li>
+                        <li>Faire le levé topographique à la date prévue</li>
+                        <li>Faire signer un PV sur le terrain</li>
+                        <li>Traiter le dossier et soumission plateforme</li>
+                    </ul>
+                </section>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2024 BETIGA SARL. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Bouton Flottant : Contact Rapide -->
+    <a href="index.html?subject=cadastre#contact" class="floating-cta visible" aria-label="Contacter BETIGA">
+        <span class="cta-text">Prêt à commencer ? Contactez-nous pour votre enregistrement !</span>
+        <div class="cta-icon">
+            <i class="fas fa-paper-plane"></i>
+        </div>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+
+</html>

@@ -230,6 +230,16 @@ function setupForm() {
     const msg = document.getElementById('formMessage');
     if (!form || !msg) return;
 
+    // Gestion du sujet automatique via URL (?subject=cadastre)
+    const urlParams = new URLSearchParams(window.location.search);
+    const subjectParam = urlParams.get('subject');
+    if (subjectParam === 'cadastre') {
+        const subjectSelect = form.querySelector('#subject');
+        if (subjectSelect) {
+            subjectSelect.value = "Enregistrement Individuel au Cadastre";
+        }
+    }
+
     form.addEventListener('submit', async function (e) {
         e.preventDefault();
 
