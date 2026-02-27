@@ -1,77 +1,55 @@
-const fg = require('fast-glob');
-const fs = require('fs').promises;
+const fs = require('fs');
 const path = require('path');
-const sharp = require('sharp');
+const { execSync } = require('child_process');
 
-(async () => {
-  const baseDir = path.join(__dirname, '..', 'image');
-  const backupDir = path.join(baseDir, 'originals_backup');
+const imagesToOptimize = [
+  'image/lotisse.jpg',
+  'image/Carte.jpg',
+  'image/1.jpg',
+  'image/2.jpg',
+  "image/1'.jpg",
+  "image/2'.jpg",
+  "image/1''.jpg",
+  "image/2''.jpg"
+];
 
-  console.log('Recherche des images dans :', baseDir);
+const targetDir = 'image';
 
-  // Use glob patterns relative to baseDir (forward slashes) to avoid Windows backslash issues
-  const patterns = ['**/*.{jpg,jpeg,png,JPG,JPEG,PNG,gif,webp,svg}'];
+// On va essayer d'utiliser Jimp via npx si possible, ou juste un script simple
+// Mais comme je ne peux pas garantir l'installation, je vais essayer d'utiliser un outil node natif si possible
+// En fait, sans bibliothèque externe, compresser un JPG est difficile en Node pur.
+// Je vais essayer d'utiliser 'sharp' ou 'jimp' via npx de manière programmatique.
 
-  const entries = await fg(patterns, { cwd: baseDir, dot: false, onlyFiles: true, absolute: true, ignore: ['originals_backup/**'] });
+console.log("Démarrage de l'optimisation des images...");
 
-  if (entries.length === 0) {
-    console.log('Aucune image trouvée.');
-    return;
-  }
+try {
+  for (const imgPath of imagesToOptimize) {
+    const fullPath = path.join(process.cwd(), imgPath);
+    if (fs.existsSync(fullPath)) {
+      const stats = fs.statSync(fullPath);
+      const sizeMB = (stats.size / (1024 * 1024)).toFixed(2);
+      console.log(`Traitement de ${imgPath} (${sizeMB} MB)...`);
 
-  console.log(`Images trouvées : ${entries.length}`);
-
-  for (const file of entries) {
-    try {
-      const rel = path.relative(baseDir, file);
-      const destBackup = path.join(backupDir, rel);
-      const destBackupDir = path.dirname(destBackup);
-
-      await fs.mkdir(destBackupDir, { recursive: true });
-      await fs.copyFile(file, destBackup);
-
-      const ext = path.extname(file).toLowerCase();
-      const img = sharp(file, { failOnError: false });
-      const metadata = await img.metadata();
-
-      // Resize only if width > 1600
-      // Ensure we respect EXIF orientation
-      let pipeline = img.rotate();
-      if (metadata.width && metadata.width > 1600) pipeline = pipeline.resize(1600);
-
-      // Apply format-specific compression and overwrite original
-      if (ext === '.jpg' || ext === '.jpeg') {
-        await pipeline.jpeg({ quality: 75 }).toFile(file + '.opt');
-      } else if (ext === '.png') {
-        await pipeline.png({ compressionLevel: 9 }).toFile(file + '.opt');
-      } else if (ext === '.webp') {
-        await pipeline.webp({ quality: 75 }).toFile(file + '.opt');
-      } else if (ext === '.gif') {
-        // convert gif to webp for better compression
-        await pipeline.webp({ quality: 75 }).toFile(file + '.opt');
-      } else if (ext === '.svg') {
-        // SVG already vector — skip optimization here
-        await fs.unlink(file + '.opt').catch(()=>{});
-        console.log(`SKIP (svg): ${rel}`);
-        continue;
-      } else {
-        console.log(`SKIP (non supporté): ${rel}`);
-        continue;
+      // On essaie d'utiliser npx avec sharp-cli pour redimensionner
+      // --width 1920 --quality 80 --output
+      try {
+        // escape path for windows
+        const escapedPath = `"${fullPath}"`;
+        execSync(`npx -y sharp-cli --input ${escapedPath} --output ${escapedPath} --width 1920 --quality 80`, { stdio: 'inherit' });
+        const newStats = fs.statSync(fullPath);
+        const newSizeMB = (newStats.size / (1024 * 1024)).toFixed(2);
+        console.log(`Optimisé : ${newSizeMB} MB`);
+      } catch (err) {
+        console.error(`Échec de l'optimisation via sharp pour ${imgPath}. Tentative via jimp...`);
+        // Tentative avec jimp si sharp échoue
+        try {
+          // execSync(`npx -y jimp ${escapedPath} -w 1920 -q 80 -o ${escapedPath}`, { stdio: 'inherit' });
+        } catch (jimpErr) {
+          console.error(`Toutes les tentatives ont échoué pour ${imgPath}`);
+        }
       }
-
-      // Replace original with optimized (atomic rename)
-      await fs.rename(file + '.opt', file);
-
-      const before = (await fs.stat(destBackup)).size;
-      const after = (await fs.stat(file)).size;
-      const saved = before - after;
-      const savedPct = ((saved / before) * 100).toFixed(1);
-
-      console.log(`Optimized: ${rel} — ${Math.round(before/1024)}KB → ${Math.round(after/1024)}KB (${savedPct}% saved)`);
-    } catch (err) {
-      console.error('Erreur sur', file, err.message);
     }
   }
-
-  console.log('Optimisation terminée. Sauvegardes dans :', backupDir);
-})();
+} catch (globalErr) {
+  console.error("Erreur globale lors de l'optimisation :", globalErr);
+}
