@@ -304,6 +304,7 @@ a {
 .hero {
     margin-top: 90px;
     min-height: 100vh;
+    height: 100vh;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -330,7 +331,7 @@ a {
     height: 100%;
     opacity: 0;
     transition: opacity 2s ease-in-out, transform 2s ease-in-out;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .slide.active {
@@ -2407,9 +2408,46 @@ Voir les instructions dans le HTML pour personnaliser
 @media (max-width: 768px) {
 
     /* Hero Section Mobile */
-    .hero-content h2 {
-        font-size: 2.5rem !important;
+    .hero {
+        min-height: 60vh !important;
+        height: auto !important;
+        padding: 40px 0;
+    }
+
+    .hero-content {
+        padding: 40px 20px !important;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+    }
+
+    .hero-text h2 {
+        font-size: 2.2rem !important;
         line-height: 1.2 !important;
+    }
+
+    .hero-text .tagline {
+        font-size: 1.1rem !important;
+    }
+
+    .hero-text p {
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+    }
+
+    .hero-visual {
+        display: none;
+        /* Hide complex visual on small screens to save space and avoid clutter */
+    }
+
+    .slide {
+        transform: scale(1.02) !important;
+    }
+
+    .slide.active {
+        transform: scale(1) !important;
     }
 
     /* Project Detail Page Titles */
@@ -2438,6 +2476,63 @@ Voir les instructions dans le HTML pour personnaliser
     .form-group.consent label {
         font-size: 0.9rem;
         margin: 0;
+    }
+
+    /* Section À Propos Mobile */
+    .about {
+        padding: 60px 20px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+
+    .about-grid.reverse {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .about-image img {
+        height: 350px;
+    }
+
+    .about-badge {
+        padding: 20px;
+        bottom: -20px;
+        right: 0;
+    }
+
+    .about-badge .number {
+        font-size: 32px;
+    }
+
+    /* Images Projets Mobile */
+    .project-image {
+        height: 250px !important;
+        /* Reduce height to avoid extreme zoom-in */
+    }
+
+    /* Images Blog Mobile */
+    .blog-image {
+        height: 200px !important;
+        /* Reduce height to avoid extreme zoom-in */
+    }
+
+    /* General Image Scaling Fix */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Specific scaling for sections where object-fit is used */
+    .project-image img,
+    .blog-image img,
+    .about-image img,
+    .slide img {
+        object-fit: cover !important;
+        object-position: center !important;
     }
 }
 
