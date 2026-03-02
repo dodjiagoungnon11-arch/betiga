@@ -1,4 +1,4 @@
-/* BETIGA SARL - Main Javascript */
+/* Scripts principaux du site BETIGA SARL - Gestion de l'interactivité */
 
 document.addEventListener('DOMContentLoaded', () => {
     initPreloader();
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initVideoPlayer();
 });
 
-// --- UI Components & Initializers ---
+// Initialisation des composants
 
 function initPreloader() {
     window.addEventListener('load', () => {
@@ -93,7 +93,7 @@ function initBackToTop() {
     bt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 }
 
-// --- Specific Features ---
+// Fonctions métiers
 
 function initBeninMap() {
     const div = document.getElementById('beninMap');
@@ -140,7 +140,7 @@ function animateCounters() {
     counters.forEach(c => obs.observe(c));
 }
 
-// --- Portfolio & Gallery ---
+// Portfolio et Galeries
 
 function initProjectFilter() {
     const btns = document.querySelectorAll('.filter-btn');
@@ -179,7 +179,7 @@ function buildCarousel() {
     // Placeholder if needed for specific carousels
 }
 
-// --- Modal System ---
+// Fenêtres modales
 
 function showSuccessModal(text) {
     let m = document.getElementById('successModal');
@@ -304,7 +304,7 @@ function setupForm() {
     });
 }
 
-// --- Utils ---
+// Utilitaires
 
 function setupPhoneLink() {
     const isMobile = /Mobi|Android|iPhone/i.test(navigator.userAgent);

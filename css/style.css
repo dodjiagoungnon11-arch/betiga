@@ -1,4 +1,4 @@
-/* Fichier : style.css (utilitaires et variables) */
+/* Styles globaux, variables et utilitaires - Site BETIGA */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@300;400;600&display=swap');
 
 :root {
@@ -13,7 +13,7 @@ body {
     scroll-behavior: smooth;
 }
 
-/* Personnalisation de la Scrollbar */
+/* Retour en haut */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -84,12 +84,9 @@ h3,
     height: 80px !important;
 }
 
-/* ==================================================
-    Styles déplacés depuis index.html <style>
-   (Extrait et transféré pour séparer HTML / CSS)
-   ================================================== */
+/* Section Hero */
 
-/* ==================== CSS VARIABLES ==================== */
+/* Définition de la charte graphique et des variables */
 :root {
     --primary: #0A4D68;
     --secondary: #088395;
@@ -110,7 +107,7 @@ h3,
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ==================== BASE STYLES ==================== */
+/* Styles de base */
 * {
     margin: 0;
     padding: 0;
@@ -152,7 +149,7 @@ a {
     color: inherit;
 }
 
-/* ==================== PRELOADER ==================== */
+/* Preloader */
 .preloader {
     position: fixed;
     top: 0;
@@ -187,7 +184,7 @@ a {
     }
 }
 
-/* ==================== NAVIGATION ==================== */
+/* Navigation */
 .navbar {
     position: fixed;
     top: 0;
@@ -334,7 +331,7 @@ a {
     transform: rotate(-45deg) translate(8px, -8px);
 }
 
-/* ==================== HERO SECTION AVEC SLIDER 3D ==================== */
+/* Section Hero */
 .hero {
     margin-top: 90px;
     min-height: 100vh;

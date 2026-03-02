@@ -1,11 +1,8 @@
-/* page-styles.css
-    Extrait depuis la balise <style> de index.html
-   Ne pas modifier ici si vous préférez garder le CSS dans des fichiers séparés
-*/
+/* Styles spécifiques aux pages et composants - BETIGA */
 
-/* CSS variables are consolidated in css/style.css :root for global use */
+/* Les variables globales sont définies dans style.css */
 
-/* ==================== BASE STYLES ==================== */
+/* Styles de base et mise en page */
 * {
     margin: 0;
     padding: 0;
@@ -47,7 +44,7 @@ a {
     color: inherit;
 }
 
-/* ==================== PRELOADER ==================== */
+/* Preloader */
 .preloader {
     position: fixed;
     top: 0;
@@ -82,7 +79,7 @@ a {
     }
 }
 
-/* ==================== NAVIGATION ==================== */
+/* Navigation */
 .navbar {
     position: fixed;
     top: 0;
@@ -116,7 +113,7 @@ a {
     z-index: 1001;
 }
 
-/* Logo image - si vous avez un fichier logo */
+/* Logo - Gestion de l'image et des effets */
 .logo-img {
     max-height: 65px;
     width: auto;
@@ -147,7 +144,7 @@ a {
     }
 }
 
-/* Pulse permanent très discret */
+/* Animation de pulsation douce */
 .logo-img {
     animation: logoEntrance 1s ease-out forwards, logoSubtlePulse 4s infinite ease-in-out 1s;
 }
@@ -166,7 +163,7 @@ a {
     }
 }
 
-/* Hero slider controls */
+/* Contrôles du slider héro */
 .hero-controls {
     position: absolute;
     right: 24px;
@@ -274,7 +271,7 @@ a {
     box-shadow: var(--shadow-lg);
 }
 
-/* Mobile Menu */
+/* Menu Mobile */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -303,7 +300,7 @@ a {
     transform: rotate(-45deg) translate(8px, -8px);
 }
 
-/* ==================== HERO SECTION AVEC SLIDER 3D ==================== */
+/* Section Héro : Slider et Présentation */
 .hero {
     margin-top: 90px;
     min-height: 100vh;
@@ -315,13 +312,7 @@ a {
     background: var(--dark);
 }
 
-/* 
-====================================
-SECTION IMAGES HERO SLIDER - CHANGEZ VOS IMAGES ICI
-====================================
-Ajoutez vos images en remplaçant les URLs ci-dessous.
-Recommandation : Images haute résolution 1920x1080px minimum
-*/
+/* Galerie d'images du Slider principal */
 .hero-slider {
     position: absolute;
     top: 0;
@@ -531,7 +522,7 @@ Recommandation : Images haute résolution 1920x1080px minimum
     font-weight: 500;
 }
 
-/* ==================== ABOUT SECTION ==================== */
+/* Section Présentation / À Propos */
 .about {
     padding: 120px 40px;
     background: var(--white);
@@ -697,7 +688,7 @@ IMAGE À PROPOS - CHANGEZ VOTRE IMAGE ICI
     margin: 0;
 }
 
-/* ==================== MOT DU DG ==================== */
+/* Mot du DG */
 .dg-message-container {
     background: var(--light);
     border-radius: 20px;
@@ -817,7 +808,7 @@ IMAGE À PROPOS - CHANGEZ VOTRE IMAGE ICI
     line-height: 1.75;
 }
 
-/* ==================== SERVICES SECTION ==================== */
+/* Services */
 .services {
     padding: 120px 40px;
     background: var(--light);
@@ -998,7 +989,7 @@ IMAGE À PROPOS - CHANGEZ VOTRE IMAGE ICI
     color: var(--success);
 }
 
-/* ==================== PARTNERS SECTION (MARQUEE) ==================== */
+/* Partenaires */
 .partners {
     padding: 60px 0;
     background: var(--white);
@@ -1087,7 +1078,7 @@ IMAGE À PROPOS - CHANGEZ VOTRE IMAGE ICI
     }
 }
 
-/* ==================== PROJECTS SECTION ==================== */
+/* Projets */
 .projects {
     padding: 120px 40px;
     background: white;
@@ -1146,11 +1137,7 @@ IMAGE À PROPOS - CHANGEZ VOTRE IMAGE ICI
     box-shadow: 0 20px 40px rgba(5, 191, 219, 0.2);
 }
 
-/* 
-====================================
-IMAGES PROJETS - CHANGEZ VOS IMAGES ICI
-====================================
-*/
+/* Images des Projets */
 .project-image {
     position: relative;
     height: 350px;
@@ -1280,7 +1267,7 @@ IMAGES PROJETS - CHANGEZ VOS IMAGES ICI
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* ==================== BLOG/ACTUALITÉS SECTION ==================== */
+/* Actualités */
 .blog {
     padding: 120px 40px;
     background: var(--light);
@@ -1311,11 +1298,7 @@ IMAGES PROJETS - CHANGEZ VOS IMAGES ICI
     box-shadow: var(--shadow-xl);
 }
 
-/* 
-====================================
-IMAGES BLOG - CHANGEZ VOS IMAGES ICI
-====================================
-*/
+/* Images Actualités */
 .blog-image {
     height: 260px;
     overflow: hidden;
@@ -1381,7 +1364,7 @@ IMAGES BLOG - CHANGEZ VOS IMAGES ICI
     gap: 14px;
 }
 
-/* ==================== ÉQUIPE SECTION ==================== */
+/* Équipe */
 .team {
     padding: 120px 40px;
     background: white;
@@ -1413,12 +1396,7 @@ IMAGES BLOG - CHANGEZ VOS IMAGES ICI
 }
 
 
-/*====================================
-PHOTOS ÉQUIPE - CHANGEZ VOS IMAGES ICI
-====================================*/
-/* Option 1: Utilisez les initiales (par défaut)
-    Option 2: Remplacez par de vraies photos en ajoutant :
-    <img src="C:\Users\kakpo\Site_BETIGA\image\Equipe.jpeg" alt="Nom"> */
+/* Trombinoscope Équipe */
 .team-image {
     height: 340px;
     background: var(--gradient-primary);
@@ -1457,7 +1435,7 @@ PHOTOS ÉQUIPE - CHANGEZ VOS IMAGES ICI
     line-height: 1.5;
 }
 
-/* ==================== CONTACT SECTION ==================== */
+/* Contact */
 .contact {
     padding: 120px 40px;
     background: var(--light);
@@ -1792,7 +1770,7 @@ Voir les instructions dans le HTML pour personnaliser
     transform: translateX(-50%) translateY(0);
 }
 
-/* ==================== FLOATING WHATSAPP BUTTON ==================== */
+/* WhatsApp flottant */
 .floating-whatsapp {
     position: fixed;
     width: 60px;
@@ -1836,7 +1814,7 @@ Voir les instructions dans le HTML pour personnaliser
     }
 }
 
-/* ==================== FOOTER ==================== */
+/* Pied de page */
 .footer {
     background: var(--dark);
     color: white;
