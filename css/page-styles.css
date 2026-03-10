@@ -1050,16 +1050,21 @@ IMAGE À PROPOS - CHANGEZ VOTRE IMAGE ICI
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin: 0 40px;
-    padding: 20px 40px;
+    margin: 0 30px;
+    padding: 15px 30px;
     background: white;
     border: 1px solid var(--gray-light);
     border-radius: 12px;
-    color: var(--dark);
-    font-weight: 700;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
     vertical-align: middle;
+    height: 100px;
+}
+
+.partner-logo img {
+    max-height: 70px;
+    width: auto;
+    object-fit: contain;
 }
 
 .partner-logo:hover {
