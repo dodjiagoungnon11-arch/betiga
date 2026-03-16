@@ -385,12 +385,12 @@ a {
 }
 
 .hero-text h2 {
-    font-size: 64px;
-    font-weight: 900;
+    font-size: 52px;
+    font-weight: 800;
     color: white;
     line-height: 1.1;
-    margin-bottom: 25px;
-    animation: fadeInUp 0.8s ease both;
+    margin-bottom: 20px;
+    animation: fadeInUp 0.8s ease;
 }
 
 .hero-text .highlight {
@@ -407,6 +407,64 @@ a {
     animation: fadeInUp 0.8s ease 0.2s both;
 }
 
+/* Slide Brand Dynamique */
+.slide-brand {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-display {
+    position: absolute;
+    z-index: 10;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.brand-name {
+    font-size: 10rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    font-weight: 900;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    margin: 0;
+    animation: brandTitleEnter 1.5s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+@keyframes brandTitleEnter {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(50px);
+        letter-spacing: 50px;
+        filter: blur(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        letter-spacing: 15px;
+        filter: blur(0);
+    }
+}
+
+@media (max-width: 992px) {
+    .brand-name {
+        font-size: 6rem;
+        letter-spacing: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-text h2 {
+        font-size: 32px;
+    }
+    .brand-name {
+        font-size: 3.5rem;
+        letter-spacing: 4px;
+    }
+}
 .hero-text p {
     font-size: 18px;
     color: rgba(255, 255, 255, 0.88);
