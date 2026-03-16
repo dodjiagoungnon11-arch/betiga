@@ -715,8 +715,13 @@ IMAGE À PROPOS - CHANGEZ VOTRE IMAGE ICI
 .about-text p {
     color: var(--gray);
     line-height: 1.95;
-    margin-bottom: 22px;
+    margin-bottom: 20px;
     font-size: 16px;
+}
+
+.about-text strong {
+    color: var(--secondary);
+    font-weight: 700;
 }
 
 .about-features {
