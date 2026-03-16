@@ -113,7 +113,7 @@ function initHeroSlider() {
         slides[cur].classList.remove('active');
         cur = (cur + 1) % slides.length;
         slides[cur].classList.add('active');
-    }, 8000);
+    }, 5000);
 }
 
 function initAOS() {
